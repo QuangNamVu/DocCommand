@@ -1,0 +1,4 @@
+<Leader> w find word
+<Leader> j find down line
+<Leader> h find up line
+s 	search 2 word

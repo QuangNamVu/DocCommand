@@ -1,0 +1,6 @@
++-----------------------|--------------|----------------------|-------------+
+| commnad               | package      | contain              | config file |
++-----------------------|--------------|----------------------|-------------+
+| pdflatex somefile.tex | texlive-core | essential            |
+| pdflatex somefile.tex | texlive-bin  | binary+lib+texmftree |
+|                       | 

@@ -1,0 +1,10 @@
++----------------------------------------|---------|--------+
+| commmand                               | machine | define |
++----------------------------------------|---------|--------+
+| pacman -S virtualbox-host-dkms         | host    |        |
++----------------------------------------|---------|--------+
+| pacman -S virtualbox-guest-dkms        |         |        |
+| pacman -S virtualbox-guest-utils       | guest   |        |
+| modprobe -a vboxguest vboxsf vboxvideo |         |        |
++----------------------------------------|---------|--------+
+

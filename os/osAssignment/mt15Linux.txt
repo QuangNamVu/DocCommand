@@ -1,0 +1,61 @@
+ls -l by-path
+fdisk sdb
+mkfs.ext4 
+mkdir /home/student
+mount
+mkdir kernel
+wget https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.9.9.tar.xz
+git init
+git config --global user.email ""
+git config --global user.name ""
+git add -A
+git commit -m "1st"
+git log
+zcat /proc/config.gz > .config		7957
+make nconfig 4.9.9-RCn				8029
+make -j 8
+
+make modules_install---> 4.9.94.9.9-RCn-gc591e2a-dirty (/lib/modules/)
+mkinitcpio -k 4.9.94.9.9-RCn-gc591e2a-dirty -c /etc/mkinitcpio.conf -g /boot/initramfs-linux-4.9.9.img
+//copy kernel
+cp -v arch/x86/boot/bzImage /boot.vmlinuz-linux-4
+//copy system map
+cp System.map /boot/System.map-4.9
+
+ln -sf /boot/System.map-4.9 /boot/System.map
++40custom		/etc/grub.d/40
+https://github.com/CocVu/osAssignment
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+
+
+arch/x86/entry/syscalls/syscall_64.tbl  548
+arch/x86/entry/syscalls/syscall_32.tbl	383
+
+include/linux/syscalls.h
+
+arch/x86/kernel/Makefile	obj-y +=
+
+_________________________________________________________________________
+							
+							SUBMIT
+
+arch/x86/entry/syscalls/syscall_64.tbl
+arch/x86/entry/syscalls/syscall_32.tbl
+include/linux/syscalls.h
+<Folder contains get_unique_id.c>/Makefile
+<Folder contains get_unique_id.c>/get_unique_id.c
+ <Folder contains get_unique_id.c>/... (Your custom file)
+a) git commit -m "Your commit message"
+b) Optional: You can use git log to check the changes
+git format_patch HEAD~1 
+_________________________________________________________________________
+
+nm .o 		doc file binary
+nm 	arch/x86/kernel/built-in.o |grep get
+
+nm vmlinux | grep get_...
+
+check bzImage
+
+file arch/x86/boot/bzImage

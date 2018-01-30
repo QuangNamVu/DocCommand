@@ -1,0 +1,19 @@
++--------|-----------|---------|-------------+
+| to do  | option    | command | key         |
++--------|-----------|---------|-------------+
+| SORT   | name      | ob      | base name   |
+| n to 1 | size      | os      |             |
+|        | extension | oe      | extension   |
+|        | mtime     | om      | made time   |
+|        | mtime     | om      | made time   |
+|        | ctime     | oc      | change time |
+|        | type      | ot      |             |
++--------|-----------|---------|-------------+
+| SORT   | name      | ob      | base name   |
+| 1 to n | size      | os      |             |
+|        | extension | oe      | extension   |
+|        | mtime     | om      | made time   |
+|        | mtime     | om      | made time   |
+|        | ctime     | oc      | change time |
+|        | type      | ot      |             |
++--------|-----------|---------|-------------+

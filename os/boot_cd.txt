@@ -1,0 +1,3 @@
+arch-chroot /mnt /bin/bash
+pacman -U /var/cache/pacman/pkg/package-old_version.pkg.tar.xz
+pacman -U linux-3.5.6-1-x86_64.pkg.tar.xz linux-headers-3.5.6-1-x86_64.pkg.tar.xz virtualbox-host-modules-4.2.0-5-x86_64.pkg.tar.xz
