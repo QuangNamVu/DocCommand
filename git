@@ -18,5 +18,4 @@ git add . -A # remove file
 git format_patch HEAD~1 
 curl https://raw.githubusercontent.com/tobi-wan-kenobi/bumblebee-status/master/bumblebee/engine.py > engine.py #git 1 file
 git remote rm origin 
-git remote add origin https://CocVu:cocwant585@github.com/path/to/repo.git
-https://github.com/CocVu/DocCommand
+git remote add origin https://CocVu:pass@github.com/CocVu/DocCommand
