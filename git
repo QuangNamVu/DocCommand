@@ -1,0 +1,22 @@
+wget http://github.com/[username]/[repo]/archive/master.zip
+git clone link
+git clone --recurse-submodules
+git remote add origin https://github.com/CocVu/usingGithubLinux.git
+git remote add origin https://github.com/CocVu/configFile
+git remote add origin https://github.com/CocVu/hk171
+git remote add origin https://github.com/CocVu/script
+git remote add origin https://github.com/CocVu/dotVim
+git remote add origin https://github.com/CocVu/nmconfig
+git push -u origin master
+git push --force origin master
+cache: default in github timeout is 15min
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+git rm --cached file
+git rm -f  --cached bundle/YouCompleteMe
+git add . -A # remove file
+git format_patch HEAD~1 
+curl https://raw.githubusercontent.com/tobi-wan-kenobi/bumblebee-status/master/bumblebee/engine.py > engine.py #git 1 file
+git remote rm origin 
+git remote add origin https://CocVu:cocwant585@github.com/path/to/repo.git
+https://github.com/CocVu/DocCommand
