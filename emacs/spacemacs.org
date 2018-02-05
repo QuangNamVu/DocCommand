@@ -25,6 +25,7 @@ Files manipulation commands (start with ~f~):
 | ~SPC f v p~ | add a local variable to the first line of the current file     |
 | ~SPC f y~   | show current file absolute path in the minibuffer              |
 
+
 **** Emacs and Spacemacs files
 Convenient key bindings are located under the prefix ~SPC f e~ to quickly
 navigate between =Emacs= and Spacemacs specific files.
@@ -42,6 +43,7 @@ navigate between =Emacs= and Spacemacs specific files.
 
 --
 ## Comment
+g c c	comment 
 SPC ;	comment operator
 SPC c y	comment and yank
 SPC c p	comment paragraphs
