@@ -1,0 +1,38 @@
+wget http://github.com/[username]/[repo]/archive/master.zip
+git clone link
+git clone --recurse-submodules
+git remote add origin https://github.com/CocVu/usingGithubLinux.git
+git push -u origin master
+git push --force origin master
+cache: default in github timeout is 15min
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+git rm --cached file
+git rm -f  --cached bundle/YouCompleteMe
+git add . -A # remove file
+git format_patch HEAD~1 
+
+* Status
+  git status
+* Download single file
+curl https://raw.githubusercontent.com/tobi-wan-kenobi/bumblebee-status/master/bumblebee/engine.py > engine.py #git 1 file
+* Change url
+** show
+  git remote -v
+** change
+git remote rm origin 
+git remote add origin https://user_name:pass@github.com/link-to-repo
+
+* Branch
+git checkout -b <branch-name> # Create a new branch and check it out
+git push -u <remote-name> <branch-name>
+git fetch
+** switch master
+git checkout origin/your_branch
+
+* Ssh-key
+generate new key
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+* Reset
+# danger zone #
+git reset --hard
