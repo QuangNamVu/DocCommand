@@ -29,11 +29,25 @@ xbacklight -inc 20
 xbacklight -dec 20
 
 * Internet
-** wifi-menu
-rm /etc/systemd/system/multi-user.target.wants/netctl* 
-rm /etc/netctl/wlp2s0-xxx
-sudo ip link set wlp2s0 down
+** ssh
+*** generation
+   ssh-keygen
+*** auto save password
+    ssh-copy-id -i .ssh/id_rsa.pub std@hpcc.hcmut.edu.vn
 
+    [[~/.ssh/config]]
+    Hostname hpcc.hcmut.edu.vn
+    User std
+    IdentityFile ~/.ssh/id_rsa
+** wifi-menu
+sudo rm /etc/systemd/system/multi-user.target.wants/netctl* 
+sudo ls /etc/systemd/system/multi-user.target.wants/netctl* 
+sudo rm /etc/netctl/wlp2s0-xxx
+sudo rm /etc/netctl/wlp2s0*
+sudo ip link set wlp2s0 down
+sudo ip link set eno1 down
+** reenable wifi
+sudo netctl reenable wlp2s0-Antivirut
 * Time
 timedatectl set-ntp true #sync
 * File
