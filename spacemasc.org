@@ -1,0 +1,5 @@
+* snippets
+      ;; auto-completion-private-snippets-directory '~/.emacs.d/snippets
+       https://github.com/AndreaCrotti/yasnippet-snippets/tree/master/snippets
+       ~/.emacs.d/private/snippets
+
