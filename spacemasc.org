@@ -1,3 +1,6 @@
+* permission
+ | ~SPC-f-E~ | sudo edit          |
+ | ~SPC-b-w~ | change toread-only |
 * snippets
       ;; auto-completion-private-snippets-directory '~/.emacs.d/snippets
        https://github.com/AndreaCrotti/yasnippet-snippets/tree/master/snippets

@@ -46,6 +46,14 @@ sudo rm /etc/netctl/wlp2s0-xxx
 sudo rm /etc/netctl/wlp2s0*
 sudo ip link set wlp2s0 down
 sudo ip link set eno1 down
+
+   sudo systemctl stop dhcpcd.service
+   sudo systemctl disable dhcpcd.service
+   sudo rm -fr /var/lib/dhcpcd/dhcpcd-eno1.lease wlp2s0*
+   sudo rm /etc/systemd/system/multi-user.target.wants/netctl*
+   sudo rm -fr /etc/netctl/wlp2s0*
+
+   sudo netctl switch-to wlp2s0-WifiKTX
 ** reenable wifi
 sudo netctl reenable wlp2s0-Antivirut
 * Time
@@ -63,6 +71,9 @@ x - extract #tar
 v - verbose output (lists all files as they are extracted) #tar
 j - deal with bzipped file #tar
 f - read from a file, rather than a tape device #tar
+* shell
+** switch shell to zsh login shell
+chsh /bin/zsh
 * Other
 dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
 ps aux | grep  kill -9
