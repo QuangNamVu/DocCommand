@@ -1,3 +1,12 @@
+* window
+ | ~SPC-w-m~  | full window    |
+ | ~C-w-hjkl~ | move to window |
+* git
+ | ~SPC-g-s~ | git status  |
+ | ~F-u~     | pull origin |
+* compile
+ | ~SPC-c-m~ | run make file    |
+ | ~SPC-c-k~ | kill-compilation |
 * permission
  | ~SPC-f-E~ | sudo edit          |
  | ~SPC-b-w~ | change toread-only |
@@ -5,4 +14,9 @@
       ;; auto-completion-private-snippets-directory '~/.emacs.d/snippets
        https://github.com/AndreaCrotti/yasnippet-snippets/tree/master/snippets
        ~/.emacs.d/private/snippets
-
+* Buffer
+** startup message *Message*
+** kill
+ | ~SPC-b-d~            | kill this buffer       |
+ | kill matching buffer | search buffer and kill |
+  
