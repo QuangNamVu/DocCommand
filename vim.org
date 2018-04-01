@@ -1,0 +1,11 @@
+* window
+| :vsplit file_name  | split vertical window   |
+| :vsp file_name     | split vertical window   |
+| vim -O file1 file2 | split vertical window   |
+| vim -o file1 file2 | split horizontal window |
+| C-w hjkl           | move to window          |
+| :hide              | close window            |
+* make
+| :make rule_name | make file |
+* shell
+ | ~!command~ | command in window |
