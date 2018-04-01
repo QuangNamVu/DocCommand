@@ -1,3 +1,5 @@
+* python
+ | ~SPC-m-c-c~ | compile file |
 * window
  | ~SPC-w-m~  | full window    |
  | ~C-w-hjkl~ | move to window |
