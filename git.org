@@ -35,8 +35,15 @@ git format_patch HEAD~1
    git branch -d branch_name
    git branch -D branch_name
 ** switch master
-   git checkout origin/your_branch
+   git checkout origin master
 
+** dotfile
+   git init --bare $HOME/.cfg
+   alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+   dot add -f .emacs.d/private/snippets
+   config config --local status.showUntrackedFiles no
+   # echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
+   # echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
 * Ssh-key
   generate new key
   ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
