@@ -1,3 +1,6 @@
+* python
+** version
+   python -c 'import tensorflow as tf; print(tf.__version__)'  
 * Basic
 ** remove
 rm -r -- !(*.txt)
@@ -8,12 +11,38 @@ cat Dropbox/linux/vim/.vimrc >  /etc/vimrc
 ** multi folder
 mv -t destinationfile abc def #move multi file to destination file
 ** kill
+** find
+find . -type d -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+find . -mtime -3
+find / -iname "*.jpg"
+find / -iname 101.txt
+find . -type h -maxdepth 3 |grep xyz //not find directory
+** date ( time)
+date --set="2 OCT 2006 18:00:00"
+date +%T -s "10:13:13"
+date +%Y -> 2017
+date +%j : day of year -> 166
+** suspend
+   echo 'systemctl suspend' | at now + 30 minutes
+   sleep 1m && systemctl suspend
+   echo 'systemctl hibernate' | at now + 30 minutes
+*** RAM 
+   systemctl suspend 
+*** hard disk
+   systemctl hibernate
+
 * Arch linux
 ** update
 pacman-Rns 		remove
 pacman -Scc	remove
 pacman -Ss	search
 pacman -v 	verbose root conf file db path cache dir
+* Sound
+** mute application
+  pacmd list-sink-inputs
+  pacmd set-sink-input-mute <index> false
+  pacmd set-sink-input-mute 1842 true
+  pacmd set-sink-input-mute 1844 true
 * Vimdiff
 vimdiff 1 2 # compare 2 file zo -> open fold.  zc -> close fold.
 * X window
@@ -54,8 +83,17 @@ sudo ip link set eno1 down
    sudo rm -fr /etc/netctl/wlp2s0*
 
    sudo netctl switch-to wlp2s0-WifiKTX
+   # default netctl
+   netctl enable wlp2s0-WifiKTX\\ 
 ** reenable wifi
 sudo netctl reenable wlp2s0-Antivirut
+* Default open application
+xdg-settings set default-web-browser firefox.desktop
+xdg-mime query default application/pdf
+xdg-mime default zathura.desktop application/pdf
+xdg-mime default firefox.desktop x-scheme-handler/http
+xdg-mime default firefox.desktop x-scheme-handler/https
+xdg-mime default vim.desktop text/plain
 * Time
 timedatectl set-ntp true #sync
 * File
@@ -71,19 +109,23 @@ x - extract #tar
 v - verbose output (lists all files as they are extracted) #tar
 j - deal with bzipped file #tar
 f - read from a file, rather than a tape device #tar
-* shell
+* Shell
 ** switch shell to zsh login shell
 chsh /bin/zsh
+* Hardware
+** RAM
+cat /proc/meminfo
+free -g
+free -m
+** Speed test
+  curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+** version linux
+   cat /proc/versio
+   cat /etc/*-release
 * Other
 dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
 ps aux | grep  kill -9
 pkill dic pgrep pstree top
-//suspend RAM hibernate hard disk
-systemctl suspend 
-systemctl hibernate
-echo 'systemctl suspend' | at now + 30 minutes
-sleep 1m && systemctl suspend
-echo 'systemctl hibernate' | at now + 30 minutes
 VMware /var/lib/vmware/Shared VMs
 sofware synaptic
 xset b off // bell
@@ -97,19 +139,10 @@ gcc -S t.cpp gcc -c t.cpp gcc t.cpp
 sysctl kernel.hostname=NEW_HOSTNAME
 hosteame NEW_NAME
 pacman -R $(pacman -Qdtq)
-date --set="2 OCT 2006 18:00:00"
-date +%T -s "10:13:13"
-date +%Y -> 2017
-date +%j : day of year -> 166
 export TERM=xterm-color
 tree
-find . -type d -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
-find . -mtime -3
 downgrade /var/cache/pacman/pkg
 pacman -U
-find / -iname "*.jpg"
-find / -iname 101.txt
-find . -type h -maxdepth 3 |grep xyz //not find directory
 Dropbox
 ~/.config/autostart
 Crtl-R redo 
@@ -144,8 +177,6 @@ bindsym $mod+F5		exec sudo systemctl restart NetworkManager netctl
 systemctl list-unit-files | grep enabled
 setxkbmap jp
 localectl set-x11-keymap jp #japan japanese keyboard xinit startx find keycode -> xev
-xdg-mime query default application/pdf
-xdg-mime default zathura.desktop application/pdf
 cd bumblebee-status
 ./bumblebee-status -l themes
 ./bumblebee-status -l modules
@@ -174,7 +205,4 @@ youtube-dl --extract-audio --audio-format mp3 -l [YOUTUBE VIDEO LINK]
 latex + dvips + ps2pdf pdf2ps
 dot -Tpng iris_tree.dot -o iris_tree.png
 ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
-xdg-mime default firefox.desktop x-scheme-handler/http
-xdg-mime default firefox.desktop x-scheme-handler/https
-xdg-mime default vim.desktop text/plain
 source .bashrc
