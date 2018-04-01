@@ -1,0 +1,10 @@
+* OS
+  List of phones that support multiple different operating systems
+** htc hd2
+   DarkForcesTeam
+   Đời đầu, phần cứng chưa bị lock và có đủ driver cần. 
+   why smartphone hardware locked and not enough driver
+   https://forum.xda-developers.com/hd2-android/nand-dev/nov-17-2015-kernel-3-0-101-t3251438
+* ROM
+  Hệ điều hành đi kèm với máy bán ra chính thức được gọi là ROM gốc, hay ROM Stock,
+  trong khi đó các bản ROM được xào nấu, tùy biến lại sẽ được gọi là ROM cook.
