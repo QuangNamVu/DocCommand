@@ -1,0 +1,4 @@
+DefaultHandler Terminating process 8 on event 0
+
+GetClassMediaFile Media class not found
+winetricks  quartz
