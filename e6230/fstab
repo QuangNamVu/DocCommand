@@ -8,3 +8,7 @@ UUID=625aa881-3f25-4826-88cb-7a1b70cb006d	/         	ext4      	rw,relatime,data
 # /dev/sda1
 UUID=649A-A852      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro	0 2
 
+# /dev/sda4
+UUID=BE0C00D20C00881B /drive_c              ntfs        defaults                                                                                    0 0
+# /dev/sda5
+UUID=84706808706802F2 /D          ntfs        defaults                                                                                              0 0

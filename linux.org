@@ -122,6 +122,16 @@ free -m
 ** version linux
    cat /proc/versio
    cat /etc/*-release
+** disk space
+/dev/sda1: UUID="649A-A852" TYPE="vfat" PARTLABEL="EFI System" PARTUUID="5f669cb5-6f0b-4b0b-b54b-b25530400393"
+/dev/sda2: UUID="258f2db3-0394-402b-b9ea-3338c3f84d0c" TYPE="swap" PARTLABEL="Linux swap" PARTUUID="b42fb23e-cefa-4a70-9dce-89999c459cf9"
+/dev/sda3: UUID="625aa881-3f25-4826-88cb-7a1b70cb006d" TYPE="ext4" PARTUUID="f4bb70f7-05c5-4a4b-9ad1-2f9c11f5f852"
+/dev/sda4: UUID="BE0C00D20C00881B" TYPE="ntfs" PARTUUID="28bf29c7-2ef3-4d44-8eff-e8f0a9d3ce65"
+/dev/sda5: LABEL="New Volume" UUID="84706808706802F2" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="8550e6c4-b43b-4757-aa54-e30d618cb938"
+/dev/loop0: TYPE="squashfs"
+/dev/loop1: TYPE="squashfs"
+** auto mount disk when startup
+
 * Other
 dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
 ps aux | grep  kill -9
