@@ -1,0 +1,2 @@
+| io | #include <stdio.h> |
+|    |                    |
