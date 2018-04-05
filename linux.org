@@ -3,64 +3,74 @@
    python -c 'import tensorflow as tf; print(tf.__version__)'  
 * Basic
 ** remove
-rm -r -- !(*.txt)
+   rm -r -- !(*.txt)
 ** copy
-cp -p abc/bcd
+   cp -p abc/bcd
 ** piping
-cat Dropbox/linux/vim/.vimrc >  /etc/vimrc
+   cat Dropbox/linux/vim/.vimrc >  /etc/vimrc
 ** multi folder
-mv -t destinationfile abc def #move multi file to destination file
+   mv -t destinationfile abc def #move multi file to destination file
 ** kill
+   ps aux | grep  kill -9
+   pkill dic pgrep pstree top
 ** find
-find . -type d -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
-find . -mtime -3
-find / -iname "*.jpg"
-find / -iname 101.txt
-find . -type h -maxdepth 3 |grep xyz //not find directory
+   find . -type d -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+   find . -mtime -3
+   find / -iname "*.jpg"
+   find / -iname 101.txt
+   find . -type h -maxdepth 3 |grep xyz //not find directory
 ** date ( time)
-date --set="2 OCT 2006 18:00:00"
-date +%T -s "10:13:13"
-date +%Y -> 2017
-date +%j : day of year -> 166
+   date --set="2 OCT 2006 18:00:00"
+   date +%T -s "10:13:13"
+   date +%Y -> 2017
+   date +%j : day of year -> 166
 ** suspend
    echo 'systemctl suspend' | at now + 30 minutes
    sleep 1m && systemctl suspend
    echo 'systemctl hibernate' | at now + 30 minutes
 *** RAM 
-   systemctl suspend 
+    systemctl suspend 
 *** hard disk
-   systemctl hibernate
+    systemctl hibernate
 
+** link
+   sudo ln -s /usr/bin/modinfo /sbin/modinfo
+   ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
+*** show
+    ls -al
 * Arch linux
 ** update
-pacman-Rns 		remove
-pacman -Scc	remove
-pacman -Ss	search
-pacman -v 	verbose root conf file db path cache dir
+   pacman-Rns 		remove
+   pacman -Scc	remove
+   pacman -Ss	search
+   pacman -v 	verbose root conf file db path cache dir
+   pacman -R $(pacman -Qdtq)
+   pacman -U
+   pacman-optimize 
 * Sound
 ** mute application
-  pacmd list-sink-inputs
-  pacmd set-sink-input-mute <index> false
-  pacmd set-sink-input-mute 1842 true
-  pacmd set-sink-input-mute 1844 true
+   pacmd list-sink-inputs
+   pacmd set-sink-input-mute <index> false
+   pacmd set-sink-input-mute 1842 true
+   pacmd set-sink-input-mute 1844 true
 * Vimdiff
-vimdiff 1 2 # compare 2 file zo -> open fold.  zc -> close fold.
+  vimdiff 1 2 # compare 2 file zo -> open fold.  zc -> close fold.
 * X window
 ** xrandr
-xrandr -q
-xrandr --output LVDS1 --rotate inverted
-xrandr --output LVDS1 --rotate left
-xrandr --output LVDS1 --rotate right
-xrandr --output LVDS1 --rotate normal
-xrandr --output VGA1 --mode 1024x768 --same-as LVDS1
+   xrandr -q
+   xrandr --output LVDS1 --rotate inverted
+   xrandr --output LVDS1 --rotate left
+   xrandr --output LVDS1 --rotate right
+   xrandr --output LVDS1 --rotate normal
+   xrandr --output VGA1 --mode 1024x768 --same-as LVDS1
 ** backlight (brightness)
-xbacklight -inc 20
-xbacklight -dec 20
+   xbacklight -inc 20
+   xbacklight -dec 20
 
 * Internet
 ** ssh
 *** generation
-   ssh-keygen
+    ssh-keygen
 *** auto save password
     ssh-copy-id -i .ssh/id_rsa.pub std@hpcc.hcmut.edu.vn
 
@@ -69,12 +79,12 @@ xbacklight -dec 20
     User std
     IdentityFile ~/.ssh/id_rsa
 ** wifi-menu
-sudo rm /etc/systemd/system/multi-user.target.wants/netctl* 
-sudo ls /etc/systemd/system/multi-user.target.wants/netctl* 
-sudo rm /etc/netctl/wlp2s0-xxx
-sudo rm /etc/netctl/wlp2s0*
-sudo ip link set wlp2s0 down
-sudo ip link set eno1 down
+   sudo rm /etc/systemd/system/multi-user.target.wants/netctl* 
+   sudo ls /etc/systemd/system/multi-user.target.wants/netctl* 
+   sudo rm /etc/netctl/wlp2s0-xxx
+   sudo rm /etc/netctl/wlp2s0*
+   sudo ip link set wlp2s0 down
+   sudo ip link set eno1 down
 
    sudo systemctl stop dhcpcd.service
    sudo systemctl disable dhcpcd.service
@@ -86,133 +96,129 @@ sudo ip link set eno1 down
    # default netctl
    netctl enable wlp2s0-WifiKTX\\ 
 ** reenable wifi
-sudo netctl reenable wlp2s0-Antivirut
+   sudo netctl reenable wlp2s0-Antivirut
 * Default open application
-xdg-settings set default-web-browser firefox.desktop
-xdg-mime query default application/pdf
-xdg-mime default zathura.desktop application/pdf
-xdg-mime default firefox.desktop x-scheme-handler/http
-xdg-mime default firefox.desktop x-scheme-handler/https
-xdg-mime default vim.desktop text/plain
+  xdg-settings set default-web-browser firefox.desktop
+  xdg-mime query default application/pdf
+  xdg-mime default zathura.desktop application/pdf
+  xdg-mime default firefox.desktop x-scheme-handler/http
+  xdg-mime default firefox.desktop x-scheme-handler/https
+  xdg-mime default vim.desktop text/plain
 * Time
-timedatectl set-ntp true #sync
+  timedatectl set-ntp true #sync
 * File
 ** tar
-+-------+-------+
-|tar.bz2|jxf    |
-+-------+-------+
-| tar.gz|xvf    |
-+-------+-------+
-tar -cf # compress
-install xvzf #tar
-x - extract #tar
-v - verbose output (lists all files as they are extracted) #tar
-j - deal with bzipped file #tar
-f - read from a file, rather than a tape device #tar
+   +-------+-------+
+   |tar.bz2|jxf    |
+   +-------+-------+
+   | tar.gz|xvf    |
+   +-------+-------+
+   tar -cf # compress
+   install xvzf #tar
+   x - extract #tar
+   v - verbose output (lists all files as they are extracted) #tar
+   j - deal with bzipped file #tar
+   f - read from a file, rather than a tape device #tar
 * Shell
 ** switch shell to zsh login shell
-chsh /bin/zsh
+   chsh /bin/zsh
+* Upload
+  curl --upload-file vie_best.traineddata https://transfer.sh/vie_best.traineddata
+  curl https://transfer.sh/wfU9n/vie_best.traineddata > vie_best.traineddata
 * Hardware
 ** RAM
-cat /proc/meminfo
-free -g
-free -m
+   cat /proc/meminfo
+   free -g
+   free -m
 ** Speed test
-  curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+   curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
 ** version linux
    cat /proc/versio
    cat /etc/*-release
 ** disk space
-/dev/sda1: UUID="649A-A852" TYPE="vfat" PARTLABEL="EFI System" PARTUUID="5f669cb5-6f0b-4b0b-b54b-b25530400393"
-/dev/sda2: UUID="258f2db3-0394-402b-b9ea-3338c3f84d0c" TYPE="swap" PARTLABEL="Linux swap" PARTUUID="b42fb23e-cefa-4a70-9dce-89999c459cf9"
-/dev/sda3: UUID="625aa881-3f25-4826-88cb-7a1b70cb006d" TYPE="ext4" PARTUUID="f4bb70f7-05c5-4a4b-9ad1-2f9c11f5f852"
-/dev/sda4: UUID="BE0C00D20C00881B" TYPE="ntfs" PARTUUID="28bf29c7-2ef3-4d44-8eff-e8f0a9d3ce65"
-/dev/sda5: LABEL="New Volume" UUID="84706808706802F2" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="8550e6c4-b43b-4757-aa54-e30d618cb938"
-/dev/loop0: TYPE="squashfs"
-/dev/loop1: TYPE="squashfs"
+   /dev/sda1: UUID="649A-A852" TYPE="vfat" PARTLABEL="EFI System" PARTUUID="5f669cb5-6f0b-4b0b-b54b-b25530400393"
+   /dev/sda2: UUID="258f2db3-0394-402b-b9ea-3338c3f84d0c" TYPE="swap" PARTLABEL="Linux swap" PARTUUID="b42fb23e-cefa-4a70-9dce-89999c459cf9"
+   /dev/sda3: UUID="625aa881-3f25-4826-88cb-7a1b70cb006d" TYPE="ext4" PARTUUID="f4bb70f7-05c5-4a4b-9ad1-2f9c11f5f852"
+   /dev/sda4: UUID="BE0C00D20C00881B" TYPE="ntfs" PARTUUID="28bf29c7-2ef3-4d44-8eff-e8f0a9d3ce65"
+   /dev/sda5: LABEL="New Volume" UUID="84706808706802F2" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="8550e6c4-b43b-4757-aa54-e30d618cb938"
+   /dev/loop0: TYPE="squashfs"
+   /dev/loop1: TYPE="squashfs"
 ** auto mount disk when startup
 
+* service
+  systemctl enable bluetooth.service
+  systemctl start bluetooth.service
 * Other
-dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
-ps aux | grep  kill -9
-pkill dic pgrep pstree top
-VMware /var/lib/vmware/Shared VMs
-sofware synaptic
-xset b off // bell
-set bell-style none    /etc/inputrc tty
-SH file cd /bin
-apt-get install wine32-preloader wine64-preloader
-#lsmod | grep blue
-systemctl enable bluetooth.service
-systemctl start bluetooth.service
-gcc -S t.cpp gcc -c t.cpp gcc t.cpp
-sysctl kernel.hostname=NEW_HOSTNAME
-hosteame NEW_NAME
-pacman -R $(pacman -Qdtq)
-export TERM=xterm-color
-tree
-downgrade /var/cache/pacman/pkg
-pacman -U
-Dropbox
-~/.config/autostart
-Crtl-R redo 
-find -maxdepth 5 |grep nerdtree
-mplayer -vo caca video file
-tmux show -g | cat > ~/.tmux.conf
-useradd -m -G wheel,games,rfkill,users,uucp,audio,camera,disk,floppy,lp,network,optical,power,scanner,storage,sys,video -s /bin/bash user regular user
-sbt reload clean compile test run pckage
-unzip abc.zip -d newfolder
-zip -r abc.zip abc
-rankmirrors -n 6 mirrorlist.bak > mirrorlist
-~/.dropbox-dist/dropboxd 
-arch-chroot /mnt /bin/bash
-pacman-optimize 
-SQlite3
-drop table xxx; delete from xxx;
-.tables list all table;
-.schema xxx; nhin cau truc
-select * from xxx;
-insert into admin values(1,'ad','thecore68');
-create table(integer , varchar(20));
-stardict -h
- /etc/systemd/system/ systemctl
-ip link set interface up
-ranger --copy-config=all #ranger s gotopwd
-ranger --copy-config=scope
-systemtcl disable xdm gdm kdm lightdm
- du -sh filepath //get size of folder
-apple : mount : modprobe fuse -> usbmuxd -> ifuse /mnt
-apple mount -t exfat /dev/sdb2 /mnt  pacman -S exfat-utils
-bindsym $mod+F5		exec sudo systemctl restart NetworkManager netctl
-systemctl list-unit-files | grep enabled
-setxkbmap jp
-localectl set-x11-keymap jp #japan japanese keyboard xinit startx find keycode -> xev
-cd bumblebee-status
-./bumblebee-status -l themes
-./bumblebee-status -l modules
-parted -l
-mkfs.ntfs -Q -L diskLabel /dev/sdXY #format
-7z file.7z #7zip
-mirage /mnt/wallpaper/galaxy.png # view image
-calcurse //todo
-i3-msg "$ws1 ; append_layout ~/.i3/nguyenly.json"
-i3-msg "$ws1 ; append_layout ~/.i3/1.json"
-i3-msg restart
-i3-save-tree --workspace 4 > ~/.i3/1.json
-tail -n +2 ~/.i3/1.json | fgrep -v '// splitv' | sed 's|//||g' > ~/.i3/1.json
-grep "something" file
-evince zathura apvlv #pdf viewer
-qalc 12h to min
-useradd -m -G wheel -s /bin/bash daygeek
-sudo ln -s /usr/bin/modinfo /sbin/modinfo
-mkinitcpio -p linux > /mnt/mkinitcpio.txt 2>&1
-set -o vi # bash shell
-export LANG=en_US.UTF-8
-recordmydesktop #record
-youtube-dl --extract-audio --audio-format mp3 urls
-youtube-dl -f best -citw -v <url-of-channel>
-youtube-dl --extract-audio --audio-format mp3 -l [YOUTUBE VIDEO LINK]
-latex + dvips + ps2pdf pdf2ps
-dot -Tpng iris_tree.dot -o iris_tree.png
-ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
-source .bashrc
+  dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
+  VMware /var/lib/vmware/Shared VMs
+  sofware synaptic
+  xset b off // bell
+  set bell-style none    /etc/inputrc tty
+  SH file cd /bin
+  apt-get install wine32-preloader wine64-preloader
+  #lsmod | grep blue
+  gcc -S t.cpp gcc -c t.cpp gcc t.cpp
+  sysctl kernel.hostname=NEW_HOSTNAME
+  hosteame NEW_NAME
+  export TERM=xterm-color
+  tree
+  downgrade /var/cache/pacman/pkg
+  ~/.config/autostart
+  Crtl-R redo 
+  find -maxdepth 5 |grep nerdtree
+  mplayer -vo caca video file
+  tmux show -g | cat > ~/.tmux.conf
+  useradd -m -G wheel,games,rfkill,users,uucp,audio,camera,disk,floppy,lp,network,optical,power,scanner,storage,sys,video -s /bin/bash user regular user
+  sbt reload clean compile test run pckage
+  unzip abc.zip -d newfolder
+  zip -r abc.zip abc
+  rankmirrors -n 6 mirrorlist.bak > mirrorlist
+  ~/.dropbox-dist/dropboxd 
+  arch-chroot /mnt /bin/bash
+  SQlite3
+  drop table xxx; delete from xxx;
+  .tables list all table;
+  .schema xxx; nhin cau truc
+  select * from xxx;
+  insert into admin values(1,'ad','thecore68');
+  create table(integer , varchar(20));
+  stardict -h
+  /etc/systemd/system/ systemctl
+  ip link set interface up
+  ranger --copy-config=all #ranger s gotopwd
+  ranger --copy-config=scope
+  systemtcl disable xdm gdm kdm lightdm
+  du -sh filepath //get size of folder
+  apple : mount : modprobe fuse -> usbmuxd -> ifuse /mnt
+  apple mount -t exfat /dev/sdb2 /mnt  pacman -S exfat-utils
+  bindsym $mod+F5		exec sudo systemctl restart NetworkManager netctl
+  systemctl list-unit-files | grep enabled
+  setxkbmap jp
+  localectl set-x11-keymap jp #japan japanese keyboard xinit startx find keycode -> xev
+  cd bumblebee-status
+  ./bumblebee-status -l themes
+  ./bumblebee-status -l modules
+  parted -l
+  mkfs.ntfs -Q -L diskLabel /dev/sdXY #format
+  7z file.7z #7zip
+  mirage /mnt/wallpaper/galaxy.png # view image
+  calcurse //todo
+  i3-msg "$ws1 ; append_layout ~/.i3/nguyenly.json"
+  i3-msg "$ws1 ; append_layout ~/.i3/1.json"
+  i3-msg restart
+  i3-save-tree --workspace 4 > ~/.i3/1.json
+  tail -n +2 ~/.i3/1.json | fgrep -v '// splitv' | sed 's|//||g' > ~/.i3/1.json
+  grep "something" file
+  evince zathura apvlv #pdf viewer
+  qalc 12h to min
+  useradd -m -G wheel -s /bin/bash daygeek
+  mkinitcpio -p linux > /mnt/mkinitcpio.txt 2>&1
+  set -o vi # bash shell
+  export LANG=en_US.UTF-8
+  recordmydesktop #record
+  youtube-dl --extract-audio --audio-format mp3 urls
+  youtube-dl -f best -citw -v <url-of-channel>
+  youtube-dl --extract-audio --audio-format mp3 -l [YOUTUBE VIDEO LINK]
+  latex + dvips + ps2pdf pdf2ps
+  dot -Tpng iris_tree.dot -o iris_tree.png
+  source .bashrc
