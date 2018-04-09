@@ -1,6 +1,89 @@
-* python
-** version
-   python -c 'import tensorflow as tf; print(tf.__version__)'  
+* Other
+  dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
+  VMware /var/lib/vmware/Shared VMs
+  sofware synaptic
+  xset b off // bell
+  set bell-style none    /etc/inputrc tty
+  SH file cd /bin
+  apt-get install wine32-preloader wine64-preloader
+  #lsmod | grep blue
+  gcc -S t.cpp gcc -c t.cpp gcc t.cpp
+  sysctl kernel.hostname=NEW_HOSTNAME
+  hosteame NEW_NAME
+  export TERM=xterm-color
+  tree
+  ~/.config/autostart
+  Crtl-R redo 
+  find -maxdepth 5 |grep nerdtree
+  mplayer -vo caca video file
+  tmux show -g | cat > ~/.tmux.conf
+  useradd -m -G wheel,games,rfkill,users,uucp,audio,camera,disk,floppy,lp,network,optical,power,scanner,storage,sys,video -s /bin/bash user regular user
+  sbt reload clean compile test run pckage
+  unzip abc.zip -d newfolder
+  zip -r abc.zip abc
+  rankmirrors -n 6 mirrorlist.bak > mirrorlist
+  ~/.dropbox-dist/dropboxd 
+  arch-chroot /mnt /bin/bash
+  SQlite3
+  drop table xxx; delete from xxx;
+  .tables list all table;
+  .schema xxx; nhin cau truc
+  select * from xxx;
+  insert into admin values(1,'ad','thecore68');
+  create table(integer , varchar(20));
+  stardict -h
+  /etc/systemd/system/ systemctl
+  ranger --copy-config=all #ranger s gotopwd
+  ranger --copy-config=scope
+  systemtcl disable xdm gdm kdm lightdm
+  du -sh filepath //get size of folder
+  apple : mount : modprobe fuse -> usbmuxd -> ifuse /mnt
+  apple mount -t exfat /dev/sdb2 /mnt  pacman -S exfat-utils
+  bindsym $mod+F5		exec sudo systemctl restart NetworkManager netctl
+  systemctl list-unit-files | grep enabled
+  setxkbmap jp
+  localectl set-x11-keymap jp #japan japanese keyboard xinit startx find keycode -> xev
+  cd bumblebee-status
+  ./bumblebee-status -l themes
+  ./bumblebee-status -l modules
+  parted -l
+  mkfs.ntfs -Q -L diskLabel /dev/sdXY #format
+  7z file.7z #7zip
+  mirage /mnt/wallpaper/galaxy.png # view image
+  calcurse //todo
+  i3-msg "$ws1 ; append_layout ~/.i3/nguyenly.json"
+  i3-msg "$ws1 ; append_layout ~/.i3/1.json"
+  i3-msg restart
+  i3-save-tree --workspace 4 > ~/.i3/1.json
+  tail -n +2 ~/.i3/1.json | fgrep -v '// splitv' | sed 's|//||g' > ~/.i3/1.json
+  grep "something" file
+  evince zathura apvlv #pdf viewer
+  qalc 12h to min
+  useradd -m -G wheel -s /bin/bash daygeek
+  mkinitcpio -p linux > /mnt/mkinitcpio.txt 2>&1
+  set -o vi # bash shell
+  export LANG=en_US.UTF-8
+  recordmydesktop #record
+  youtube-dl --extract-audio --audio-format mp3 urls
+  youtube-dl -f best -citw -v <url-of-channel>
+  youtube-dl --extract-audio --audio-format mp3 -l [YOUTUBE VIDEO LINK]
+  latex + dvips + ps2pdf pdf2ps
+  dot -Tpng iris_tree.dot -o iris_tree.png
+* Folder
+** /usr/share
+   The /usr/share directory contains architecture-independent shareable text files.
+   The contents of this directory can be shared by all machines,
+   regardless of hardware architecture.
+*** /usr/share/man
+    Contains the manual pages if they have been loaded
+*** /usr/share/dict
+    Contains the spelling dictionary and its indexes
+*** /usr/share/lib
+    Contains architecture-independent data files, including terminfo, learn, tmac, me, and macros
+*** /usr/share/lpp
+    Contains data and information about optionally installable products on the system
+** /usr/lib includes object files and libraries.
+   [21] On some systems, it may also include internal binaries that are not intended to be executed directly by users or shell scripts. [22]
 * Basic
 ** remove
    rm -r -- !(*.txt)
@@ -47,6 +130,8 @@
    pacman -R $(pacman -Qdtq)
    pacman -U
    pacman-optimize 
+** downgrade
+   downgrade /var/cache/pacman/pkg
 * Sound
 ** mute application
    pacmd list-sink-inputs
@@ -73,9 +158,11 @@
     ssh-keygen
 *** auto save password
     ssh-copy-id -i .ssh/id_rsa.pub std@hpcc.hcmut.edu.vn
+    ssh-copy-id -i .ssh/id_rsa.pub student@10.1.6.21
 
     [[~/.ssh/config]]
     Hostname hpcc.hcmut.edu.vn
+    Hostname student@10.1.6.21
     User std
     IdentityFile ~/.ssh/id_rsa
 ** wifi-menu
@@ -97,6 +184,8 @@
    netctl enable wlp2s0-WifiKTX\\ 
 ** reenable wifi
    sudo netctl reenable wlp2s0-Antivirut
+** ip
+   ip link set interface up
 * Default open application
   xdg-settings set default-web-browser firefox.desktop
   xdg-mime query default application/pdf
@@ -145,80 +234,6 @@
    /dev/loop1: TYPE="squashfs"
 ** auto mount disk when startup
 
-* service
+* Service
   systemctl enable bluetooth.service
   systemctl start bluetooth.service
-* Other
-  dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
-  VMware /var/lib/vmware/Shared VMs
-  sofware synaptic
-  xset b off // bell
-  set bell-style none    /etc/inputrc tty
-  SH file cd /bin
-  apt-get install wine32-preloader wine64-preloader
-  #lsmod | grep blue
-  gcc -S t.cpp gcc -c t.cpp gcc t.cpp
-  sysctl kernel.hostname=NEW_HOSTNAME
-  hosteame NEW_NAME
-  export TERM=xterm-color
-  tree
-  downgrade /var/cache/pacman/pkg
-  ~/.config/autostart
-  Crtl-R redo 
-  find -maxdepth 5 |grep nerdtree
-  mplayer -vo caca video file
-  tmux show -g | cat > ~/.tmux.conf
-  useradd -m -G wheel,games,rfkill,users,uucp,audio,camera,disk,floppy,lp,network,optical,power,scanner,storage,sys,video -s /bin/bash user regular user
-  sbt reload clean compile test run pckage
-  unzip abc.zip -d newfolder
-  zip -r abc.zip abc
-  rankmirrors -n 6 mirrorlist.bak > mirrorlist
-  ~/.dropbox-dist/dropboxd 
-  arch-chroot /mnt /bin/bash
-  SQlite3
-  drop table xxx; delete from xxx;
-  .tables list all table;
-  .schema xxx; nhin cau truc
-  select * from xxx;
-  insert into admin values(1,'ad','thecore68');
-  create table(integer , varchar(20));
-  stardict -h
-  /etc/systemd/system/ systemctl
-  ip link set interface up
-  ranger --copy-config=all #ranger s gotopwd
-  ranger --copy-config=scope
-  systemtcl disable xdm gdm kdm lightdm
-  du -sh filepath //get size of folder
-  apple : mount : modprobe fuse -> usbmuxd -> ifuse /mnt
-  apple mount -t exfat /dev/sdb2 /mnt  pacman -S exfat-utils
-  bindsym $mod+F5		exec sudo systemctl restart NetworkManager netctl
-  systemctl list-unit-files | grep enabled
-  setxkbmap jp
-  localectl set-x11-keymap jp #japan japanese keyboard xinit startx find keycode -> xev
-  cd bumblebee-status
-  ./bumblebee-status -l themes
-  ./bumblebee-status -l modules
-  parted -l
-  mkfs.ntfs -Q -L diskLabel /dev/sdXY #format
-  7z file.7z #7zip
-  mirage /mnt/wallpaper/galaxy.png # view image
-  calcurse //todo
-  i3-msg "$ws1 ; append_layout ~/.i3/nguyenly.json"
-  i3-msg "$ws1 ; append_layout ~/.i3/1.json"
-  i3-msg restart
-  i3-save-tree --workspace 4 > ~/.i3/1.json
-  tail -n +2 ~/.i3/1.json | fgrep -v '// splitv' | sed 's|//||g' > ~/.i3/1.json
-  grep "something" file
-  evince zathura apvlv #pdf viewer
-  qalc 12h to min
-  useradd -m -G wheel -s /bin/bash daygeek
-  mkinitcpio -p linux > /mnt/mkinitcpio.txt 2>&1
-  set -o vi # bash shell
-  export LANG=en_US.UTF-8
-  recordmydesktop #record
-  youtube-dl --extract-audio --audio-format mp3 urls
-  youtube-dl -f best -citw -v <url-of-channel>
-  youtube-dl --extract-audio --audio-format mp3 -l [YOUTUBE VIDEO LINK]
-  latex + dvips + ps2pdf pdf2ps
-  dot -Tpng iris_tree.dot -o iris_tree.png
-  source .bashrc
