@@ -9,3 +9,5 @@
 | :make rule_name | make file |
 * shell
  | ~!command~ | command in window |
+* sudo edit
+  :w !sudo tee %
