@@ -36,6 +36,7 @@ git format_patch HEAD~1
    git branch -D branch_name
 ** switch master
    git checkout origin master
+   git checkout origin coc
 
 ** dotfile
    git init --bare $HOME/.cfg
