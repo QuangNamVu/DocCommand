@@ -22,3 +22,6 @@
  | ~SPC-b-d~            | kill this buffer       |
  | kill matching buffer | search buffer and kill |
   
+* Neo-tree
+ | ~SPC-f-t~ | neotree toggle    |
+ | ~SPC-f-T~ | show neotree file |
