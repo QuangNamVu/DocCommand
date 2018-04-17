@@ -121,6 +121,8 @@
    ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
 *** show
     ls -al
+** sort
+   du -hs * | sort -h
 * Arch linux
 ** update
    pacman-Rns 		remove
@@ -132,6 +134,9 @@
    pacman-optimize 
 ** downgrade
    downgrade /var/cache/pacman/pkg
+* Mouse
+synclient TapButton1=1
+synclient |grep TapButt > .config/touchpad.txt
 * Sound
 ** mute application
    pacmd list-sink-inputs
