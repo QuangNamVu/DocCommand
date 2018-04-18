@@ -1,0 +1,7 @@
+* start
+* step = s
+* print = p
+* watch {variables}
+* info = inf
+* info watch = inf wat
+* delete + (number watch) = del 
