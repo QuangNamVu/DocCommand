@@ -1,0 +1,11 @@
+gcc -g hello.c
+
+gdb a.out
+
+C-x a
+
+python
+https://github.com/spiside/pdb-tutorial
+python -m pdb main.py
+
+run < input
