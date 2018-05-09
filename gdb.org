@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 gcc -g hello.c
 
 gdb a.out
@@ -9,3 +10,12 @@ https://github.com/spiside/pdb-tutorial
 python -m pdb main.py
 
 run < input
+=======
+* start
+* step = s
+* print = p
+* watch {variables}
+* info = inf
+* info watch = inf wat
+* delete + (number watch) = del 
+>>>>>>> d95f80e4b9ba2331dc40b9963cfcf775d6c818ab
