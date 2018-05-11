@@ -9,9 +9,11 @@
 * Flags
   FLAGS = -ggdb -Wall
 
-  | Wall | warning all |
-  | -I.  | all library |
+  | Wall | warning all              |
+  | -I.  | all .h in current folder |
 
+  -I dir, --include-dir=dir
+  Specifies a directory dir to search for included makefiles
 
 ** gcc: -c
    create object file
