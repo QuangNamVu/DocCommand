@@ -26,7 +26,7 @@ Files manipulation commands (start with ~f~):
 | ~SPC f y~   | show current file absolute path in the minibuffer              |
 
 
-**** Emacs and Spacemacs files
+**** TODO Emacs and Spacemacs files
 Convenient key bindings are located under the prefix ~SPC f e~ to quickly
 navigate between =Emacs= and Spacemacs specific files.
 

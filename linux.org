@@ -24,10 +24,6 @@
   rankmirrors -n 6 mirrorlist.bak > mirrorlist
   ~/.dropbox-dist/dropboxd 
   arch-chroot /mnt /bin/bash
-  SQlite3
-  drop table xxx; delete from xxx;
-  .tables list all table;
-  .schema xxx; nhin cau truc
   select * from xxx;
   insert into admin values(1,'ad','thecore68');
   create table(integer , varchar(20));
@@ -37,8 +33,6 @@
   ranger --copy-config=scope
   systemtcl disable xdm gdm kdm lightdm
   du -sh filepath //get size of folder
-  apple : mount : modprobe fuse -> usbmuxd -> ifuse /mnt
-  apple mount -t exfat /dev/sdb2 /mnt  pacman -S exfat-utils
   bindsym $mod+F5		exec sudo systemctl restart NetworkManager netctl
   systemctl list-unit-files | grep enabled
   setxkbmap jp
@@ -48,7 +42,6 @@
   ./bumblebee-status -l modules
   parted -l
   mkfs.ntfs -Q -L diskLabel /dev/sdXY #format
-  7z file.7z #7zip
   mirage /mnt/wallpaper/galaxy.png # view image
   calcurse //todo
   i3-msg "$ws1 ; append_layout ~/.i3/nguyenly.json"
@@ -69,7 +62,13 @@
   youtube-dl --extract-audio --audio-format mp3 -l [YOUTUBE VIDEO LINK]
   latex + dvips + ps2pdf pdf2ps
   dot -Tpng iris_tree.dot -o iris_tree.png
-* Folder
+* Mount partition
+** Apple
+  apple: mount : modprobe fuse -> usbmuxd -> ifuse /mnt
+  apple mount -t exfat /dev/sdb2 /mnt  pacman -S exfat-utils
+** Format clear all system information
+  sudo mkfs.vfat -F32 /dev/sdb1
+* Folder structured
 ** /usr/share
    The /usr/share directory contains architecture-independent shareable text files.
    The contents of this directory can be shared by all machines,
@@ -123,6 +122,9 @@
     ls -al
 ** sort
    du -hs * | sort -h
+** clipboard
+xclip -selection clipboard 70-synaptics.conf
+alias cb= xclip -selection clipboard
 * Arch linux
 ** update
    pacman-Rns 		remove
@@ -153,6 +155,8 @@ synclient |grep TapButt > .config/touchpad.txt
    xrandr --output LVDS1 --rotate right
    xrandr --output LVDS1 --rotate normal
    xrandr --output VGA1 --mode 1024x768 --same-as LVDS1
+   xrandr --output VGA1 --mode 
+   xrandr --output VGA1 --mode --off
 ** backlight (brightness)
    xbacklight -inc 20
    xbacklight -dec 20
@@ -185,8 +189,13 @@ synclient |grep TapButt > .config/touchpad.txt
    sudo rm -fr /etc/netctl/wlp2s0*
 
    sudo netctl switch-to wlp2s0-WifiKTX
-   # default netctl
+   # default netctl startup
    netctl enable wlp2s0-WifiKTX\\ 
+   ln -s '/etc/systemd/system/netctl@wlp2s0\x2dCampus\x20VNU.service' '/etc/systemd/system/multi-user.target.wants/netctl@wlp2s0\x2dCampus\x20VNU.service'
+
+   # disable netctl startup
+   sudo systemctl disable netctl@wlp2s0\\x2dWifiKTX\\x5c.service 
+   Removed /etc/systemd/system/multi-user.target.wants/netctl@wlp2s0\x2dWifiKTX\x5c.service.
 ** reenable wifi
    sudo netctl reenable wlp2s0-Antivirut
 ** ip
@@ -201,6 +210,8 @@ synclient |grep TapButt > .config/touchpad.txt
 * Time
   timedatectl set-ntp true #sync
 * File
+** 7z
+   7za x file.7z
 ** tar
    +-------+-------+
    |tar.bz2|jxf    |

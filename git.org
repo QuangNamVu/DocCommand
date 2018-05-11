@@ -22,7 +22,7 @@ git format_patch HEAD~1
 ** change
    git remote rm origin 
    git remote add origin https://user_name:pass@github.com/link-to-repo
-
+   
 * Branch
   git checkout -b <branch-name> # Create a new branch and check it out
   git push -u <remote-name> <branch-name>
