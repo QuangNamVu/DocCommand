@@ -1,0 +1,10 @@
+!ls -a
+!git clone https://github.com/pjreddie/darknet
+
+gpg: key AD5F235DF639B041: public key "Launchpad PPA for Alessandro Strada" imported
+
+link tutorial
+https://medium.com/deep-learning-turkey/google-colab-free-gpu-tutorial-e113627b9f5d
+* Mount
+!mkdir -p drive
+!google-drive-ocamlfuse drive
