@@ -1,0 +1,42 @@
+* Macro
+** Format
+   $@: $^
+   $@: %.c $(DEPS)
+
+   %.o: %.c $(DEPS)
+   $(CC) -c -o $@ $< $(CFLAGS)
+
+* Flags
+  FLAGS = -ggdb -Wall
+
+  | Wall | warning all              |
+  | -I.  | all .h in current folder |
+
+  -I dir, --include-dir=dir
+  Specifies a directory dir to search for included makefiles
+
+** gcc: -c
+   create object file
+   Compile or assemble the source files, but do not link.
+   The linking stage simply is not done.  The ultimate output
+   is in the form of an object file for each source file.
+
+
+* example
+  CC=g++
+  CFLAGS=-I.
+  SQL=-l sqlite3
+  DEPS=header.h
+  OBJ=main.o  convert.o login.o select.o teacher.o student.o admin.o update.o init.o
+
+  %.o: %.cpp $(DEPS)
+  $(CC) -c -o $@ $< $(CFLAGS)
+
+  main: $(OBJ)
+  $(CC) -o $@ $^ $(SQL)
+  all: main
+  ./main
+
+  .PHONY: clean
+  clean:
+  @rm -f $(PROGRAMS) *.o core
