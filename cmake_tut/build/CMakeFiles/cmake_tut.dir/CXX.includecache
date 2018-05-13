@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/get_pass.h
+stdio.h
+-
+stdlib.h
+-
+curses.h
+-
+
+/home/coc/cmake_tut/src/get_pass.cpp
+get_pass.h
+-
+
+/home/coc/cmake_tut/src/main.cpp
+iostream
+-
+get_pass.h
+-
+

@@ -1,0 +1,3 @@
+/home/coc/cmake_tut/build/CMakeFiles/rebuild_cache.dir
+/home/coc/cmake_tut/build/CMakeFiles/cmake_tut.dir
+/home/coc/cmake_tut/build/CMakeFiles/edit_cache.dir
