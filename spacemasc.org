@@ -33,3 +33,8 @@
  [_C_] recursively  [_O_] recursively  [_A_] all        [_p_] previous [_R_] reset
  [_m_] all          [_r_] all          [_TAB_] like org ^^             [_q_] quit"
  
+* Project
+** Spacemacs You're not in a project
+   missing .projectile
+   touch .projectile
+
