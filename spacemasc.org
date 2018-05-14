@@ -32,6 +32,9 @@
  [_c_] at point     [_o_] at point     [_a_] at point   [_n_] next     [_s_] single out
  [_C_] recursively  [_O_] recursively  [_A_] all        [_p_] previous [_R_] reset
  [_m_] all          [_r_] all          [_TAB_] like org ^^             [_q_] quit"
+
+| ~zm~ | close all |
+| ~zr~ | open all  |
  
 * Project
 ** Spacemacs You're not in a project
