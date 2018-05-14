@@ -1,5 +1,4 @@
 * Other
-  dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
   VMware /var/lib/vmware/Shared VMs
   sofware synaptic
   xset b off // bell
@@ -11,7 +10,6 @@
   sysctl kernel.hostname=NEW_HOSTNAME
   hosteame NEW_NAME
   export TERM=xterm-color
-  tree
   ~/.config/autostart
   Crtl-R redo 
   find -maxdepth 5 |grep nerdtree
@@ -19,18 +17,10 @@
   tmux show -g | cat > ~/.tmux.conf
   useradd -m -G wheel,games,rfkill,users,uucp,audio,camera,disk,floppy,lp,network,optical,power,scanner,storage,sys,video -s /bin/bash user regular user
   sbt reload clean compile test run pckage
-  unzip abc.zip -d newfolder
-  zip -r abc.zip abc
   rankmirrors -n 6 mirrorlist.bak > mirrorlist
   ~/.dropbox-dist/dropboxd 
-  arch-chroot /mnt /bin/bash
-  select * from xxx;
-  insert into admin values(1,'ad','thecore68');
-  create table(integer , varchar(20));
   stardict -h
   /etc/systemd/system/ systemctl
-  ranger --copy-config=all #ranger s gotopwd
-  ranger --copy-config=scope
   systemtcl disable xdm gdm kdm lightdm
   du -sh filepath //get size of folder
   bindsym $mod+F5		exec sudo systemctl restart NetworkManager netctl
@@ -44,22 +34,13 @@
   mkfs.ntfs -Q -L diskLabel /dev/sdXY #format
   mirage /mnt/wallpaper/galaxy.png # view image
   calcurse //todo
-  i3-msg "$ws1 ; append_layout ~/.i3/nguyenly.json"
-  i3-msg "$ws1 ; append_layout ~/.i3/1.json"
-  i3-msg restart
-  i3-save-tree --workspace 4 > ~/.i3/1.json
-  tail -n +2 ~/.i3/1.json | fgrep -v '// splitv' | sed 's|//||g' > ~/.i3/1.json
   grep "something" file
   evince zathura apvlv #pdf viewer
-  qalc 12h to min
   useradd -m -G wheel -s /bin/bash daygeek
   mkinitcpio -p linux > /mnt/mkinitcpio.txt 2>&1
   set -o vi # bash shell
   export LANG=en_US.UTF-8
   recordmydesktop #record
-  youtube-dl --extract-audio --audio-format mp3 urls
-  youtube-dl -f best -citw -v <url-of-channel>
-  youtube-dl --extract-audio --audio-format mp3 -l [YOUTUBE VIDEO LINK]
   latex + dvips + ps2pdf pdf2ps
   dot -Tpng iris_tree.dot -o iris_tree.png
 * Mount partition
@@ -210,6 +191,9 @@ synclient |grep TapButt > .config/touchpad.txt
 * Time
   timedatectl set-ntp true #sync
 * File
+** zip
+  unzip abc.zip -d newfolder
+  zip -r abc.zip abc
 ** 7z
    7za x file.7z
 ** tar
@@ -224,9 +208,14 @@ synclient |grep TapButt > .config/touchpad.txt
    v - verbose output (lists all files as they are extracted) #tar
    j - deal with bzipped file #tar
    f - read from a file, rather than a tape device #tar
+** copy
+  dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
+  ( head -10 input.txt ; echo '=====' ) > output.txt
 * Shell
 ** switch shell to zsh login shell
    chsh /bin/zsh
+* usb live
+  arch-chroot /mnt /bin/bash
 * Upload
   curl --upload-file vie_best.traineddata https://transfer.sh/vie_best.traineddata
   curl https://transfer.sh/wfU9n/vie_best.traineddata > vie_best.traineddata
@@ -253,3 +242,19 @@ synclient |grep TapButt > .config/touchpad.txt
 * Service
   systemctl enable bluetooth.service
   systemctl start bluetooth.service
+* File manager
+  tree -L 3
+  ranger --copy-config=all #ranger s gotopwd
+  ranger --copy-config=scope
+* Qalc
+  12h to min
+* i3wm
+  i3-msg "$ws1 ; append_layout ~/.i3/nguyenly.json"
+  i3-msg "$ws1 ; append_layout ~/.i3/1.json"
+  i3-msg restart
+  i3-save-tree --workspace 4 > ~/.i3/1.json
+  tail -n +2 ~/.i3/1.json | fgrep -v '// splitv' | sed 's|//||g' > ~/.i3/1.json
+* youtube-dl
+  youtube-dl --extract-audio --audio-format mp3 urls
+  youtube-dl -f best -citw -v <url-of-channel>
+  youtube-dl --extract-audio --audio-format mp3 -l [YOUTUBE VIDEO LINK]
