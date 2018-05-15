@@ -41,3 +41,6 @@
    missing .projectile
    touch .projectile
 
+* Configuration
+| ~/.spacemacs | localed |
+| ~SPC f e R~  | reload  |
