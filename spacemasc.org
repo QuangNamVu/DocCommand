@@ -44,3 +44,9 @@
 * Configuration
 | ~/.spacemacs | localed |
 | ~SPC f e R~  | reload  |
+* C/C++ as ide
+** ~/.spacemacs
+  (setq-default helm-make-build-dir "build")
+| ~SPC c c default-target~ | compile        |
+| ~SPC e n~                | next error     |
+| ~SPC e N~                | previous error |
