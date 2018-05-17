@@ -25,3 +25,6 @@
 * Neo-tree
  | ~SPC-f-t~ | neotree toggle    |
  | ~SPC-f-T~ | show neotree file |
+* Make new project
+  includes Projectile for handling projects
+  header .projectile
