@@ -1,3 +1,5 @@
+* Help
+| ~SPC h l~ | view README.md help layers |
 * python
  | ~SPC-m-c-c~ | compile file |
 * window
@@ -47,6 +49,28 @@
 * C/C++ as ide
 ** ~/.spacemacs
   (setq-default helm-make-build-dir "build")
+** Compile
+export CXX='g++'
+[[prj/.clang_complete]]
+CXX="cc_args.py g++" make all
+
 | ~SPC c c default-target~ | compile        |
 | ~SPC e n~                | next error     |
 | ~SPC e N~                | previous error |
+| ~SPC e N~                | previous error |
+
+/usr/local/bin/cc_args.py
+
+CXX='cc_args.py g++' cmake ..
+CXX='cc_args.py clang++' cmake ..
+make CXX='~/.vim/bin/cc_args.py clang++'
+
+find . | grep clang_
+** Jump to function
+| ~gd~  | go(jump) to define function in the same file |
+| ~,gG~ | go(jump) to define function in other window  |
+** essential file
+[[pjr/.clang_complete]]
+-I/home/coc/asm_ktlt/include
+
+[[pjr/.projectile]]
