@@ -212,8 +212,7 @@ synclient |grep TapButt > .config/touchpad.txt
 * File
 ** 7z
    7za x file.7z
-** tar
-   +-------+-------+
+** tar   +-------+-------+
    |tar.bz2|jxf    |
    +-------+-------+
    | tar.gz|xvf    |
@@ -224,6 +223,9 @@ synclient |grep TapButt > .config/touchpad.txt
    v - verbose output (lists all files as they are extracted) #tar
    j - deal with bzipped file #tar
    f - read from a file, rather than a tape device #tar
+** change user name in file
+rsync -vuar root_file/ new_user_name_file/ 
+rsync -vuar ~/darknet/gvc_backup_nam/yolov3-voc_final.weights ~/Documents/checkpoint/gvc_final.weights
 * Shell
 ** switch shell to zsh login shell
    chsh /bin/zsh
@@ -236,7 +238,7 @@ synclient |grep TapButt > .config/touchpad.txt
    free -g
    free -m
 ** Speed test
-   curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+   curl -s https://raw.ghttp://192.168.1.9/GVCgit/AI_vehicle.gitithubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
 ** version linux
    cat /proc/versio
    cat /etc/*-release

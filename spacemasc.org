@@ -28,3 +28,6 @@
 * Make new project
   includes Projectile for handling projects
   header .projectile
+** clang complete
+touch .clang_complete
+-I/home/nam/gvc_vehicle/include
