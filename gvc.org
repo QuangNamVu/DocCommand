@@ -1,0 +1,1 @@
+./darknet detector demo cfg/coco.data cfg/yolov3.cfg ~/Documents/weight/yolov3.weights ~/Documents/test/NguyenVanTroi.mp4

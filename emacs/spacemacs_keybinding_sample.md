@@ -2,28 +2,28 @@ SPC s c remove highlight
 
 **** Files manipulations key bindings
 Files manipulation commands (start with ~f~):
-| Key Binding | Description                                                    |
-|-------------+----------------------------------------------------------------|
-| ~SPC f c~   | copy current file to a different location                      |
-| ~SPC f C d~ | convert file from unix to dos encoding                         |
-| ~SPC f C u~ | convert file from dos to unix encoding                         |
-| ~SPC f D~   | delete a file and the associated buffer (ask for confirmation) |
-| ~SPC f E~   | open a file with elevated privileges (sudo edit)               |
-| ~SPC f f~   | open file with =helm= (or =ido=)                               |
-| ~SPC f F~   | try to open the file under point =helm=                        |
-| ~SPC f j~   | jump to the current buffer file in dired                       |
-| ~SPC f l~   | open file literally in =fundamental mode=                      |
-| ~SPC f L~   | Locate a file (using =locate=)                                 |
-| ~SPC f o~   | open a file using the default external program                 |
-| ~SPC f R~   | rename the current file                                        |
-| ~SPC f s~   | save a file                                                    |
-| ~SPC f S~   | save all files                                                 |
-| ~SPC f r~   | open a recent file with =helm=                                 |
-| ~SPC f t~   | toggle file tree side bar using [[https://github.com/jaypei/emacs-neotree][NeoTree]]                        |
-| ~SPC f v d~ | add a directory variable                                       |
-| ~SPC f v f~ | add a local variable to the current file                       |
-| ~SPC f v p~ | add a local variable to the first line of the current file     |
-| ~SPC f y~   | show current file absolute path in the minibuffer              |
+| Key Binding | Description                                                                          |
+|-------------|--------------------------------------------------------------------------------------|
+| ~SPC f c~   | copy current file to a different location                                            |
+| ~SPC f C d~ | convert file from unix to dos encoding                                               |
+| ~SPC f C u~ | convert file from dos to unix encoding                                               |
+| ~SPC f D~   | delete a file and the associated buffer (ask for confirmation)                       |
+| ~SPC f E~   | open a file with elevated privileges (sudo edit)                                     |
+| ~SPC f f~   | open file with =helm= (or =ido=)                                                     |
+| ~SPC f F~   | try to open the file under point =helm=                                              |
+| ~SPC f j~   | jump to the current buffer file in dired                                             |
+| ~SPC f l~   | open file literally in =fundamental mode=                                            |
+| ~SPC f L~   | Locate a file (using =locate=)                                                       |
+| ~SPC f o~   | open a file using the default external program                                       |
+| ~SPC f R~   | rename the current file                                                              |
+| ~SPC f s~   | save a file                                                                          |
+| ~SPC f S~   | save all files                                                                       |
+| ~SPC f r~   | open a recent file with =helm=                                                       |
+| ~SPC f t~   | toggle file tree side bar using [[https://github.com/jaypei/emacs-neotree][NeoTree]] |
+| ~SPC f v d~ | add a directory variable                                                             |
+| ~SPC f v f~ | add a local variable to the current file                                             |
+| ~SPC f v p~ | add a local variable to the first line of the current file                           |
+| ~SPC f y~   | show current file absolute path in the minibuffer                                    |
 
 
 **** TODO Emacs and Spacemacs files
@@ -31,7 +31,7 @@ Convenient key bindings are located under the prefix ~SPC f e~ to quickly
 navigate between =Emacs= and Spacemacs specific files.
 
 | Key Binding | Description                                                        |
-|-------------+--------------------------------------------------------------------|
+|-------------|--------------------------------------------------------------------|
 | ~SPC f e c~ | open =ido= in the =contrib= folder                                 |
 | ~SPC f e d~ | open the spacemacs dotfile (=~/.spacemacs=)                        |
 | ~SPC f e D~ | open =ediff= buffer of =~/.spacemacs= and =.spacemacs.template=    |
@@ -94,7 +94,7 @@ SPC b K	kill all buffers except the current one
 =projectile= commands start with p:
 
 | Key Binding | Description                                           |
-|-------------+-------------------------------------------------------|
+|-------------|-------------------------------------------------------|
 | ~SPC p !~   | run shell command in root                             |
 | ~SPC p &~   | run async shell command in root                       |
 | ~SPC p a~   | toggle between implementation and test                |
@@ -138,7 +138,7 @@ SPC q z	Kill the current frame
 ## Ruby on rails
 
 | Key binding   | Description                                                     |
-|---------------+-----------------------------------------------------------------|
+|---------------|-----------------------------------------------------------------|
 | ~SPC m r f a~ | find localization file                                          |
 | ~SPC m r f c~ | find controller                                                 |
 | ~SPC m r f e~ | find environment file                                           |
@@ -178,13 +178,13 @@ SPC q z	Kill the current frame
 ** Refactoring
 
 | Key binding   | Description                 |
-|---------------+-----------------------------|
+|---------------|-----------------------------|
 | ~SPC m r R x~ | extract region into partial |
 
 ** RUN commands
 
 | Key binding   | Description          |
-|---------------+----------------------|
+|---------------|----------------------|
 | ~SPC m r :~   | run rake task        |
 | ~SPC m r c c~ | run rails generator  |
 | ~SPC m r i~   | start rails console  |
@@ -194,7 +194,7 @@ SPC q z	Kill the current frame
 ** Ex-commands
 
 | Key binding | Description                             |
-|-------------+-----------------------------------------|
+|-------------|-----------------------------------------|
 | ~:A~        | Switch between implementation and tests |
 
 --
@@ -205,7 +205,7 @@ SPC q z	Kill the current frame
 ** Ruby (enh-ruby-mode, robe, inf-ruby, ruby-tools)
 
 | Key binding | Description                                          |
-|-------------+------------------------------------------------------|
+|-------------|------------------------------------------------------|
 | ~SPC m '~   | toggle quotes of current string (only built-in mode) |
 | ~SPC m {~   | toggle style of current block (only built-in mode)   |
 | ~SPC m g g~ | go to definition (robe-jump)                         |
@@ -224,7 +224,7 @@ SPC q z	Kill the current frame
 ** RuboCop
 
 | Key binding   | Description                                          |
-|---------------+------------------------------------------------------|
+|---------------|------------------------------------------------------|
 | ~SPC m r r f~ | Runs RuboCop on the currently visited file           |
 | ~SPC m r r F~ | Runs auto-correct on the currently visited file      |
 | ~SPC m r r d~ | Prompts from a directory on which to run RuboCop     |
@@ -237,7 +237,7 @@ SPC q z	Kill the current frame
 When =ruby-test-runner= equals =rspec=.
 
 | Key binding | Description                                   |
-|-------------+-----------------------------------------------|
+|-------------|-----------------------------------------------|
 | ~SPC m t a~ | run all specs                                 |
 | ~SPC m t b~ | run current spec file                         |
 | ~SPC m t c~ | run the current spec file and subsequent ones |
@@ -252,7 +252,7 @@ When =ruby-test-runner= equals =rspec=.
 When =ruby-test-runner= equals =ruby-test=.
 
 | Key binding | Description         |
-|-------------+---------------------|
+|-------------|---------------------|
 | ~SPC m t b~ | run test file       |
 | ~SPC m t t~ | run test at pointer |
 
@@ -260,7 +260,7 @@ When =ruby-test-runner= equals =ruby-test=.
 Git commands (start with ~g~):
 
 | Key Binding | Description                                         |
-|-------------+-----------------------------------------------------|
+|-------------|-----------------------------------------------------|
 | ~SPC g b~   | open a =magit= blame                                |
 | ~SPC g B~   | quit =magit= blame                                  |
 | ~SPC g c~   | commit changes                                      |

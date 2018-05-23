@@ -21,6 +21,12 @@
    The linking stage simply is not done.  The ultimate output
    is in the form of an object file for each source file.
 
+** gcc vs g++
+   gcc will compile: *.c/*.cpp files as C and C++ respectively.
+   g++ will compile: *.c/*.cpp files but they will all be treated as C++ files.
+   Also if you use g++ to link the object files it automatically links in the std C++ libraries (gcc does not do this).
+   gcc compiling C files has fewer predefined macros.
+   gcc compiling *.cpp and g++ compiling *.c/*.cpp files has a few extra macros
 
 * example
   CC=g++

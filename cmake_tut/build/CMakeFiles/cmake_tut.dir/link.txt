@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/cmake_tut.dir/src/main.cpp.o CMakeFiles/cmake_tut.dir/src/get_pass.cpp.o  -o cmake_tut -lcurses 
