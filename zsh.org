@@ -1,0 +1,6 @@
+[[file config autosuggestion]]
+$ZSH_CUSTOM/autosuggestion-settings.zsh
+[[/home/nam/oh-my-zsh/custom/autosuggestion-settings.zsh]]
+
+bindkey '^ ' autosuggest-accept
+bindkey '^F' autosuggest-accept
