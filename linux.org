@@ -259,4 +259,4 @@ synclient |grep TapButt > .config/touchpad.txt
 * youtube-dl
   youtube-dl --extract-audio --audio-format mp3 urls
   youtube-dl -f best -citw -v <url-of-channel>
-  youtube-dl --extract-audio --audio-format mp3 -l [YOUTUBE VIDEO LINK]
+  youtube-dl --extract-audio --audio-format mp4 -l [YOUTUBE VIDEO LINK]
