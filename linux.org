@@ -260,3 +260,6 @@ synclient |grep TapButt > .config/touchpad.txt
   youtube-dl --extract-audio --audio-format mp3 urls
   youtube-dl -f best -citw -v <url-of-channel>
   youtube-dl --extract-audio --audio-format mp4 -l [YOUTUBE VIDEO LINK]
+* cut the video
+** first 5s
+  ffmpeg  -ss 00:00:05 -i TruongDaihocBachKhoa2.mp4 5s.mp4
