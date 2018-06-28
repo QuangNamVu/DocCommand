@@ -5,14 +5,12 @@
   set bell-style none    /etc/inputrc tty
   SH file cd /bin
   apt-get install wine32-preloader wine64-preloader
-  #lsmod | grep blue
   gcc -S t.cpp gcc -c t.cpp gcc t.cpp
   sysctl kernel.hostname=NEW_HOSTNAME
-  hosteame NEW_NAME
+  hosteame NEW_N AME
   export TERM=xterm-color
   ~/.config/autostart
   Crtl-R redo 
-  find -maxdepth 5 |grep nerdtree
   mplayer -vo caca video file
   tmux show -g | cat > ~/.tmux.conf
   useradd -m -G wheel,games,rfkill,users,uucp,audio,camera,disk,floppy,lp,network,optical,power,scanner,storage,sys,video -s /bin/bash user regular user
@@ -24,7 +22,6 @@
   systemtcl disable xdm gdm kdm lightdm
   du -sh filepath //get size of folder
   bindsym $mod+F5		exec sudo systemctl restart NetworkManager netctl
-  systemctl list-unit-files | grep enabled
   setxkbmap jp
   localectl set-x11-keymap jp #japan japanese keyboard xinit startx find keycode -> xev
   cd bumblebee-status
@@ -34,7 +31,6 @@
   mkfs.ntfs -Q -L diskLabel /dev/sdXY #format
   mirage /mnt/wallpaper/galaxy.png # view image
   calcurse //todo
-  grep "something" file
   evince zathura apvlv #pdf viewer
   useradd -m -G wheel -s /bin/bash daygeek
   mkinitcpio -p linux > /mnt/mkinitcpio.txt 2>&1
@@ -45,10 +41,10 @@
   dot -Tpng iris_tree.dot -o iris_tree.png
 * Mount partition
 ** Apple
-  apple: mount : modprobe fuse -> usbmuxd -> ifuse /mnt
-  apple mount -t exfat /dev/sdb2 /mnt  pacman -S exfat-utils
+   apple: mount : modprobe fuse -> usbmuxd -> ifuse /mnt
+   apple mount -t exfat /dev/sdb2 /mnt  pacman -S exfat-utils
 ** Format clear all system information
-  sudo mkfs.vfat -F32 /dev/sdb1
+   sudo mkfs.vfat -F32 /dev/sdb1
 * Folder structured
 ** /usr/share
    The /usr/share directory contains architecture-independent shareable text files.
@@ -104,28 +100,43 @@
 ** sort
    du -hs * | sort -h
 ** clipboard
-xclip -selection clipboard 70-synaptics.conf
-alias cb= xclip -selection clipboard
+   xclip -selection clipboard 70-synaptics.conf
+   alias cb= xclip -selection clipboard
+** grep
+   #lsmod | grep blue
+   find -maxdepth 5 |grep nerdtree
+   systemctl list-unit-files | grep enabled
+   grep "something" file
+*** regular expression
+    grep "0[0-9][0-9][0-9][0-9][0-9][0-9]" phu.html 
 * Arch linux
 ** update
-   pacman-Rns 		remove
    pacman -Scc	remove
    pacman -Ss	search
    pacman -v 	verbose root conf file db path cache dir
-   pacman -R $(pacman -Qdtq)
    pacman -U
    pacman-optimize 
 ** downgrade
    downgrade /var/cache/pacman/pkg
+** remove
+   pacman-Rns | dependence and 1 package
+
+   sudo pacman -Rcn fcitx
+   checking dependencies...
+   Packages (8) fcitx-gtk2-4.2.9.6-1  fcitx-gtk3-4.2.9.6-1  fcitx-qt4-4.2.9.6-1
+   fcitx-qt5-1.2.2-2  fcitx-sunpinyin-0.4.2-1  fcitx-table-extra-0.3.8-1
+   fcitx-unikey-0.2.7-2  fcitx-4.2.9.6-1
+
+** pacman auto remove
+   pacman -R $(pacman -Qdtq)
 * Mouse
-synclient TapButton1=1
-synclient |grep TapButt > .config/touchpad.txt
+  synclient TapButton1=1
+  synclient |grep TapButt > .config/touchpad.txt
 * Sound
 ** mute application
    pacmd list-sink-inputs
    pacmd set-sink-input-mute <index> false
-   pacmd set-sink-input-mute 1842 true
-   pacmd set-sink-input-mute 1844 true
+   pacmd set-sink-input-mute 26 true
 * Vimdiff
   vimdiff 1 2 # compare 2 file zo -> open fold.  zc -> close fold.
 * X window
@@ -136,8 +147,12 @@ synclient |grep TapButt > .config/touchpad.txt
    xrandr --output LVDS1 --rotate right
    xrandr --output LVDS1 --rotate normal
    xrandr --output VGA1 --mode 1024x768 --same-as LVDS1
+   xrandr --output HDMI1 --mode 1024x768 --same-as LVDS1
    xrandr --output VGA1 --mode 
    xrandr --output VGA1 --mode --off
+   xrandr --output HDMI1 --mode --off
+*** turn on
+    xrandr --output LVDS1 --auto
 ** backlight (brightness)
    xbacklight -inc 20
    xbacklight -dec 20
@@ -192,8 +207,8 @@ synclient |grep TapButt > .config/touchpad.txt
   timedatectl set-ntp true #sync
 * File
 ** zip
-  unzip abc.zip -d newfolder
-  zip -r abc.zip abc
+   unzip abc.zip -d newfolder
+   zip -r abc.zip abc
 ** unrar
    unrar e file.rar
 ** 7z
@@ -211,8 +226,8 @@ synclient |grep TapButt > .config/touchpad.txt
    j - deal with bzipped file #tar
    f - read from a file, rather than a tape device #tar
 ** copy
-  dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
- ( head -10 input.txt ; echo '=====' ) > output.txt
+   dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
+   ( head -10 input.txt ; echo '=====' ) > output.txt
 * Shell
 ** switch shell to zsh login shell
    chsh /bin/zsh
@@ -256,10 +271,16 @@ synclient |grep TapButt > .config/touchpad.txt
   i3-msg restart
   i3-save-tree --workspace 4 > ~/.i3/1.json
   tail -n +2 ~/.i3/1.json | fgrep -v '// splitv' | sed 's|//||g' > ~/.i3/1.json
-* youtube-dl
-  youtube-dl --extract-audio --audio-format mp3 urls
-  youtube-dl -f best -citw -v <url-of-channel>
-  youtube-dl --extract-audio --audio-format mp4 -l [YOUTUBE VIDEO LINK]
+* video
+** youtube-dl
+   youtube-dl --extract-audio --audio-format mp3 urls
+   youtube-dl -f best -citw -v <url-of-channel>
+   youtube-dl --extract-audio --audio-format mp4 -l [YOUTUBE VIDEO LINK]
+   <<<<<<< HEAD
+** cut video 10s from 1m8s
+   ffmpeg -i face.mp4 -ss 00:01:08.00 -t 00:00:10.00 -c copy out.mp4
+   =======
 * cut the video
 ** first 5s
-  ffmpeg  -ss 00:00:05 -i TruongDaihocBachKhoa2.mp4 5s.mp4
+   ffmpeg  -ss 00:00:05 -i TruongDaihocBachKhoa2.mp4 5s.mp4
+   >>>>>>> ffa933e44ef11db1f9aeb8ba6890138f8325d00e
