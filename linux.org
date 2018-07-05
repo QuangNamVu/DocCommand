@@ -61,6 +61,8 @@
 ** /usr/lib includes object files and libraries.
    [21] On some systems, it may also include internal binaries that are not intended to be executed directly by users or shell scripts. [22]
 * Basic
+** ls show all filename without extension
+ls -1 | sed -e 's/\.png$//'
 ** remove
    rm -r -- !(*.txt)
 ** copy
@@ -130,7 +132,13 @@
 ** pacman auto remove
    pacman -R $(pacman -Qdtq)
 * Mouse
+  [[/etc/X11/xorg.conf.d/00-keyboard.conf]]
   synclient TapButton1=1
+  synclient TapButton2=0
+  synclient TapButton3=2
+
+  [[~/.config/X11/xorg.conf.d/00-keyboard.conf]]
+*** save in file
   synclient |grep TapButt > .config/touchpad.txt
 * Sound
 ** mute application
@@ -256,8 +264,12 @@
    /dev/loop1: TYPE="squashfs"
 ** auto mount disk when startup
 
-* Service
+* Service systemctl
+** list all enable service
+   systemctl list-unit-files --state enabled
+** enable
   systemctl enable bluetooth.service
+** start
   systemctl start bluetooth.service
 * File manager
   tree -L 3

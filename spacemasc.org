@@ -3,6 +3,10 @@
 * Help
   | ~SPC h l~ | view README.md help layers |
 * python
+** jedi
+** PEP8  YAPF
+   auto indent code fix code format
+** complie
   | ~SPC-m-c-c~ | compile file |
 ** Jupyter
    Content list call http://127.0.0.1:8888/api/contents/ failed with status error.
@@ -92,3 +96,4 @@
 
    [[pjr/.projectile]]
 
+   
