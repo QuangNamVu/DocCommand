@@ -82,6 +82,9 @@
    find / -iname "*.jpg"
    find / -iname 101.txt
    find . -type h -maxdepth 3 |grep xyz //not find directory
+** sed
+*** replace substring
+    sed -i 's/car4/car9/g' *
 ** date ( time)
    date --set="2 OCT 2006 18:00:00"
    date +%T -s "10:13:13"
@@ -210,7 +213,7 @@ synclient |grep TapButt > .config/touchpad.txt
    v - verbose output (lists all files as they are extracted) #tar
    j - deal with bzipped file #tar
    f - read from a file, rather than a tape device #tar
-** copy
+** create live usb
   dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
  ( head -10 input.txt ; echo '=====' ) > output.txt
 * Shell
@@ -260,6 +263,9 @@ synclient |grep TapButt > .config/touchpad.txt
   youtube-dl --extract-audio --audio-format mp3 urls
   youtube-dl -f best -citw -v <url-of-channel>
   youtube-dl --extract-audio --audio-format mp4 -l [YOUTUBE VIDEO LINK]
+* pip
+** update
+ python3 -m pip install -U pip
 * cut the video
 ** first 5s
   ffmpeg  -ss 00:00:05 -i TruongDaihocBachKhoa2.mp4 5s.mp4
