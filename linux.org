@@ -236,7 +236,6 @@ ls -1 | sed -e 's/\.png$//'
    v - verbose output (lists all files as they are extracted) #tar
    j - deal with bzipped file #tar
    f - read from a file, rather than a tape device #tar
-<<<<<<< HEAD
 ** copy large file to another partition
   dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
  ( head -10 input.txt ; echo '=====' ) > output.txt
@@ -248,11 +247,6 @@ $  sudo dd bs=4M if=/home/nam/os/archlinux-2018.07.01-x86_64.iso of=/dev/sdb sta
 601882624 bytes (602 MB, 574 MiB) copied, 114,782 s, 5,2 MB/s
 
 sudo mkfs -t vfat /dev/sdb
-=======
-** copy
-   dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
-   ( head -10 input.txt ; echo '=====' ) > output.txt
->>>>>>> 0b0831654614b0887a0f70a76385a2bed959d321
 * Shell
 ** switch shell to zsh login shell
    chsh /bin/zsh

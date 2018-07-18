@@ -94,7 +94,7 @@ SPC b K	kill all buffers except the current one
 =projectile= commands start with p:
 
 | Key Binding | Description                                           |
-|-------------|-------------------------------------------------------|
+|-------------+-------------------------------------------------------|
 | ~SPC p !~   | run shell command in root                             |
 | ~SPC p &~   | run async shell command in root                       |
 | ~SPC p a~   | toggle between implementation and test                |
@@ -111,7 +111,7 @@ SPC b K	kill all buffers except the current one
 | ~SPC p p~   | switch project                                        |
 | ~SPC p r~   | open a recent file                                    |
 | ~SPC p R~   | replace a string                                      |
-| ~SPC p s~   | see [[Searching in a project][search in project]]                                 |
+| ~SPC p s~   | see [[Searching in a project][search in project]]     |
 | ~SPC p t~   | open =NeoTree= in =projectile= root                   |
 | ~SPC p T~   | find test files                                       |
 | ~SPC p v~   | open project root in =vc-dir= or =magit=              |
