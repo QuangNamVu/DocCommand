@@ -307,3 +307,5 @@ sudo mkfs -t vfat /dev/sdb
 
 ** cut video first 5s
    ffmpeg  -ss 00:00:05 -i TruongDaihocBachKhoa2.mp4 5s.mp4
+** resize all image in file
+for file in *.jpg; do convert $file -resize 64x128! resize-$file  && rm $file; done
