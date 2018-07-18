@@ -213,9 +213,17 @@ synclient |grep TapButt > .config/touchpad.txt
    v - verbose output (lists all files as they are extracted) #tar
    j - deal with bzipped file #tar
    f - read from a file, rather than a tape device #tar
-** create live usb
+** copy large file to another partition
   dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
  ( head -10 input.txt ; echo '=====' ) > output.txt
+** create live usb
+$  sudo dd bs=4M if=/home/nam/os/archlinux-2018.07.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
+599785472 bytes (600 MB, 572 MiB) copied, 114,131 s, 5,3 MB/s
+143+1 records in
+143+1 records out
+601882624 bytes (602 MB, 574 MiB) copied, 114,782 s, 5,2 MB/s
+
+sudo mkfs -t vfat /dev/sdb
 * Shell
 ** switch shell to zsh login shell
    chsh /bin/zsh
