@@ -1,0 +1,99 @@
+* Update spacemacs git
+  cd ~/.emacs.d/ && git pull
+* Help
+  | ~SPC h l~ | view README.md help layers |
+* python
+** jedi
+** PEP8  YAPF
+   auto indent code fix code format
+** complie
+  | ~SPC-m-c-c~ | compile file |
+** Jupyter
+   Content list call http://127.0.0.1:8888/api/contents/ failed with status error.
+
+   | ein:notebooklist-login  | login with password   |             |
+   | ein:notebooklist-open   | open file ipynb       | ~SPC a i n~ |
+   | notebook rename command | rename change United  | ~, C-r~     |
+   | org-time-stamp          | command with cell     | ~m .~       |
+   | work-sheet execute mode | run cell in text-mode | ~C-c C-c~   |
+   | insert cell below       | edit new cell         | ~C-c C-b~   |
+   | save checkpoint         |                       | ~, C-s~     |
+   |                         |                       |             |
+* Search 
+** emacs search regrex
+  | ~C-M-s~ | forward a[a-z] |
+  | ~C-M-r~ | backward       |
+* window
+  | ~SPC-w-m~  | full window    |
+  | ~C-w-hjkl~ | move to window |
+* git
+  | ~SPC-g-s~ | git status  |
+  | ~F-u~     | pull origin |
+* compile
+  | ~SPC-c-m~ | run make file    |
+  | ~SPC-c-k~ | kill-compilation |
+* permission
+  | ~SPC-f-E~ | sudo edit          |
+  | ~SPC-b-w~ | change toread-only |
+* snippets
+  ;; auto-completion-private-snippets-directory '~/.emacs.d/snippets
+  https://github.com/AndreaCrotti/yasnippet-snippets/tree/master/snippets
+  ~/.emacs.d/private/snippets
+* Buffer
+** startup message *Message*
+** kill
+   | ~SPC-b-d~            | kill this buffer       |
+   | kill matching buffer | search buffer and kill |
+  
+* Neo-tree
+  | ~SPC-f-t~ | neotree toggle    |
+  | ~SPC-f-T~ | show neotree file |
+* Folding origami
+  ~SPC h SPC origami~
+  Close^^            Open^^             Toggle^^         Goto^^         Other^^
+  ───────^^───────── ─────^^─────────── ─────^^───────── ──────^^────── ─────^^─────────
+  [_c_] at point     [_o_] at point     [_a_] at point   [_n_] next     [_s_] single out
+  [_C_] recursively  [_O_] recursively  [_A_] all        [_p_] previous [_R_] reset
+  [_m_] all          [_r_] all          [_TAB_] like org ^^             [_q_] quit"
+
+  | ~zm~ | close all |
+  | ~zr~ | open all  |
+ 
+* Project
+** Spacemacs You're not in a project
+   missing .projectile
+   touch .projectile
+
+* Configuration
+  | ~/.spacemacs | localed |
+  | ~SPC f e R~  | reload  |
+* C/C++ as ide
+** ~/.spacemacs
+   (setq-default helm-make-build-dir "build")
+** Compile
+   export CXX='g++'
+   [[prj/.clang_complete]]
+   CXX="cc_args.py g++" make all
+
+   | ~SPC c c default-target~ | compile        |
+   | ~SPC e n~                | next error     |
+   | ~SPC e N~                | previous error |
+   | ~SPC e N~                | previous error |
+
+   /usr/local/bin/cc_args.py
+
+   CXX='cc_args.py g++' cmake ..
+   CXX='cc_args.py clang++' cmake ..
+   make CXX='~/.vim/bin/cc_args.py clang++'
+
+   find . | grep clang_
+** Jump to function
+   | ~gd~  | go(jump) to define function in the same file |
+   | ~,gG~ | go(jump) to define function in other window  |
+** essential file
+   [[pjr/.clang_complete]]
+   -I/home/coc/asm_ktlt/include
+
+   [[pjr/.projectile]]
+
+   
