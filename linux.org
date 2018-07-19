@@ -307,5 +307,7 @@ sudo mkfs -t vfat /dev/sdb
 
 ** cut video first 5s
    ffmpeg  -ss 00:00:05 -i TruongDaihocBachKhoa2.mp4 5s.mp4
+** get size all image
+identify -format "%wx%h\n" ~/data/data_khanh_4k5/single_img_resize/motorbike/*.jpg echo "\n"
 ** resize all image in file
 for file in *.jpg; do convert $file -resize 64x128! resize-$file  && rm $file; done
