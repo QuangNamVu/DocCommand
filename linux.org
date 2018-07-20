@@ -293,14 +293,11 @@ xargs -a Packages pacman -S --noconfirm --needed
    youtube-dl --extract-audio --audio-format mp3 urls
    youtube-dl -f best -citw -v <url-of-channel>
    youtube-dl --extract-audio --audio-format mp4 -l [YOUTUBE VIDEO LINK]
-   <<<<<<< HEAD
 ** cut video 10s from 1m8s
    ffmpeg -i face.mp4 -ss 00:01:08.00 -t 00:00:10.00 -c copy out.mp4
-   =======
-* cut the video
 ** first 5s
    ffmpeg  -ss 00:00:05 -i TruongDaihocBachKhoa2.mp4 5s.mp4
-   >>>>>>> ffa933e44ef11db1f9aeb8ba6890138f8325d00e
+* cut the video
 * Vmware
   VMware /var/lib/vmware/Shared VMs
 
