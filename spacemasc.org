@@ -4,6 +4,7 @@
   | ~SPC h l~ | view README.md help layers |
 * python
 ** jedi
+** pip install pylint
 ** PEP8  YAPF
    auto indent code fix code format
 ** complie

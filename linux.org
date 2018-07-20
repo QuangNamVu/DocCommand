@@ -1,8 +1,5 @@
 * Other
-  VMware /var/lib/vmware/Shared VMs
   sofware synaptic
-  xset b off // bell
-  set bell-style none    /etc/inputrc tty
   SH file cd /bin
   apt-get install wine32-preloader wine64-preloader
   gcc -S t.cpp gcc -c t.cpp gcc t.cpp
@@ -22,7 +19,6 @@
   systemtcl disable xdm gdm kdm lightdm
   du -sh filepath //get size of folder
   bindsym $mod+F5		exec sudo systemctl restart NetworkManager netctl
-  setxkbmap jp
   localectl set-x11-keymap jp #japan japanese keyboard xinit startx find keycode -> xev
   cd bumblebee-status
   ./bumblebee-status -l themes
@@ -37,7 +33,6 @@
   set -o vi # bash shell
   export LANG=en_US.UTF-8
   recordmydesktop #record
-  latex + dvips + ps2pdf pdf2ps
   dot -Tpng iris_tree.dot -o iris_tree.png
 * Mount partition
 ** Apple
@@ -120,17 +115,21 @@ ls -1 | sed -e 's/\.png$//'
    pacman-optimize 
 ** downgrade
    downgrade /var/cache/pacman/pkg
+   downgrade gcc gcc-libs
 ** remove
    pacman-Rns | dependence and 1 package
-
    sudo pacman -Rcn fcitx
    checking dependencies...
    Packages (8) fcitx-gtk2-4.2.9.6-1  fcitx-gtk3-4.2.9.6-1  fcitx-qt4-4.2.9.6-1
    fcitx-qt5-1.2.2-2  fcitx-sunpinyin-0.4.2-1  fcitx-table-extra-0.3.8-1
    fcitx-unikey-0.2.7-2  fcitx-4.2.9.6-1
-
 ** pacman auto remove
    pacman -R $(pacman -Qdtq)
+** migrate to new hardware
+pacman -Qqe | grep -vx "$(pacman -Qqm)" > Packages
+pacman -Qqm > Packages.aur
+# as root
+xargs -a Packages pacman -S --noconfirm --needed
 * Mouse
   [[/etc/X11/xorg.conf.d/00-keyboard.conf]]
   synclient TapButton1=1
@@ -140,11 +139,17 @@ ls -1 | sed -e 's/\.png$//'
   [[~/.config/X11/xorg.conf.d/00-keyboard.conf]]
 *** save in file
   synclient |grep TapButt > .config/touchpad.txt
+* keyboard
+  setxkbmap jp
 * Sound
+
 ** mute application
    pacmd list-sink-inputs
    pacmd set-sink-input-mute <index> false
    pacmd set-sink-input-mute 26 true
+** mute bell
+  xset b off // bell
+  set bell-style none    /etc/inputrc tty
 * Vimdiff
   vimdiff 1 2 # compare 2 file zo -> open fold.  zc -> close fold.
 * X window
@@ -216,7 +221,7 @@ ls -1 | sed -e 's/\.png$//'
 * File
 ** zip
    unzip abc.zip -d newfolder
-   zip -r abc.zip abc
+   zip -r .kh0v3.zip .y68z
 ** unrar
    unrar e file.rar
 ** 7z
@@ -296,3 +301,8 @@ ls -1 | sed -e 's/\.png$//'
 ** first 5s
    ffmpeg  -ss 00:00:05 -i TruongDaihocBachKhoa2.mp4 5s.mp4
    >>>>>>> ffa933e44ef11db1f9aeb8ba6890138f8325d00e
+* Vmware
+  VMware /var/lib/vmware/Shared VMs
+
+* latex
+  latex + dvips + ps2pdf pdf2ps
