@@ -1,3 +1,5 @@
+* Documentation
+  ~SPC h SPC~ | read documentation
 * Update spacemacs git
   cd ~/.emacs.d/ && git pull
 * Help
@@ -96,4 +98,6 @@
 
    [[pjr/.projectile]]
 
+   [[pjr/.dir-locale]]
+(set-default helm-make-build-dir ".")
    
