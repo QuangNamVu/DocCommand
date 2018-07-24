@@ -81,7 +81,6 @@
    | ~SPC e n~                | next error     |
    | ~SPC e N~                | previous error |
    | ~SPC e N~                | previous error |
-
    /usr/local/bin/cc_args.py
 
    CXX='cc_args.py g++' cmake ..
@@ -100,4 +99,3 @@
 
    [[pjr/.dir-locale]]
 (set-default helm-make-build-dir ".")
-   
