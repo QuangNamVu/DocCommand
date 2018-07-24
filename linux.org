@@ -1,8 +1,5 @@
 * Other
-  VMware /var/lib/vmware/Shared VMs
   sofware synaptic
-  xset b off // bell
-  set bell-style none    /etc/inputrc tty
   SH file cd /bin
   apt-get install wine32-preloader wine64-preloader
   gcc -S t.cpp gcc -c t.cpp gcc t.cpp
@@ -22,7 +19,6 @@
   systemtcl disable xdm gdm kdm lightdm
   du -sh filepath //get size of folder
   bindsym $mod+F5		exec sudo systemctl restart NetworkManager netctl
-  setxkbmap jp
   localectl set-x11-keymap jp #japan japanese keyboard xinit startx find keycode -> xev
   cd bumblebee-status
   ./bumblebee-status -l themes
@@ -37,7 +33,6 @@
   set -o vi # bash shell
   export LANG=en_US.UTF-8
   recordmydesktop #record
-  latex + dvips + ps2pdf pdf2ps
   dot -Tpng iris_tree.dot -o iris_tree.png
 * Mount partition
 ** Apple
@@ -123,17 +118,21 @@ ls -1 | sed -e 's/\.png$//'
    pacman-optimize 
 ** downgrade
    downgrade /var/cache/pacman/pkg
+   downgrade gcc gcc-libs
 ** remove
    pacman-Rns | dependence and 1 package
-
    sudo pacman -Rcn fcitx
    checking dependencies...
    Packages (8) fcitx-gtk2-4.2.9.6-1  fcitx-gtk3-4.2.9.6-1  fcitx-qt4-4.2.9.6-1
    fcitx-qt5-1.2.2-2  fcitx-sunpinyin-0.4.2-1  fcitx-table-extra-0.3.8-1
    fcitx-unikey-0.2.7-2  fcitx-4.2.9.6-1
-
 ** pacman auto remove
    pacman -R $(pacman -Qdtq)
+** migrate to new hardware
+pacman -Qqe | grep -vx "$(pacman -Qqm)" > Packages
+pacman -Qqm > Packages.aur
+# as root
+xargs -a Packages pacman -S --noconfirm --needed
 * Mouse
   [[/etc/X11/xorg.conf.d/00-keyboard.conf]]
   synclient TapButton1=1
@@ -143,11 +142,17 @@ ls -1 | sed -e 's/\.png$//'
   [[~/.config/X11/xorg.conf.d/00-keyboard.conf]]
 *** save in file
   synclient |grep TapButt > .config/touchpad.txt
+* keyboard
+  setxkbmap jp
 * Sound
+
 ** mute application
    pacmd list-sink-inputs
    pacmd set-sink-input-mute <index> false
    pacmd set-sink-input-mute 26 true
+** mute bell
+  xset b off // bell
+  set bell-style none    /etc/inputrc tty
 * Vimdiff
   vimdiff 1 2 # compare 2 file zo -> open fold.  zc -> close fold.
 * X window
@@ -219,7 +224,7 @@ ls -1 | sed -e 's/\.png$//'
 * File
 ** zip
    unzip abc.zip -d newfolder
-   zip -r abc.zip abc
+   zip -r .kh0v3.zip .y68z
 ** unrar
    unrar e file.rar
 ** 7z
@@ -236,17 +241,9 @@ ls -1 | sed -e 's/\.png$//'
    v - verbose output (lists all files as they are extracted) #tar
    j - deal with bzipped file #tar
    f - read from a file, rather than a tape device #tar
-** copy large file to another partition
-  dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
- ( head -10 input.txt ; echo '=====' ) > output.txt
-** create live usb
-$  sudo dd bs=4M if=/home/nam/os/archlinux-2018.07.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
-599785472 bytes (600 MB, 572 MiB) copied, 114,131 s, 5,3 MB/s
-143+1 records in
-143+1 records out
-601882624 bytes (602 MB, 574 MiB) copied, 114,782 s, 5,2 MB/s
-
-sudo mkfs -t vfat /dev/sdb
+** copy
+   dd if=/mnt/windows/Ghost\ W7\ By\ RouJi\ Full\ Driver\(1\).GHO of=/tmp/Ghost7.GHO conv=notrunc #copy file cp
+   ( head -10 input.txt ; echo '=====' ) > output.txt
 * Shell
 ** switch shell to zsh login shell
    chsh /bin/zsh
@@ -294,9 +291,6 @@ sudo mkfs -t vfat /dev/sdb
   i3-msg restart
   i3-save-tree --workspace 4 > ~/.i3/1.json
   tail -n +2 ~/.i3/1.json | fgrep -v '// splitv' | sed 's|//||g' > ~/.i3/1.json
-* pip
-** update
- python3 -m pip install -U pip
 * video
 ** youtube-dl
    youtube-dl --extract-audio --audio-format mp3 urls
@@ -304,10 +298,11 @@ sudo mkfs -t vfat /dev/sdb
    youtube-dl --extract-audio --audio-format mp4 -l [YOUTUBE VIDEO LINK]
 ** cut video 10s from 1m8s
    ffmpeg -i face.mp4 -ss 00:01:08.00 -t 00:00:10.00 -c copy out.mp4
-
-** cut video first 5s
+** first 5s
    ffmpeg  -ss 00:00:05 -i TruongDaihocBachKhoa2.mp4 5s.mp4
-** get size all image
-identify -format "%wx%h\n" ~/data/data_khanh_4k5/single_img_resize/motorbike/*.jpg echo "\n"
-** resize all image in file
-for file in *.jpg; do convert $file -resize 64x128! resize-$file  && rm $file; done
+* cut the video
+* Vmware
+  VMware /var/lib/vmware/Shared VMs
+
+* latex
+  latex + dvips + ps2pdf pdf2ps
