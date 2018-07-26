@@ -34,6 +34,7 @@
   export LANG=en_US.UTF-8
   recordmydesktop #record
   dot -Tpng iris_tree.dot -o iris_tree.png
+
 * Mount partition
 ** Apple
    apple: mount : modprobe fuse -> usbmuxd -> ifuse /mnt
@@ -303,3 +304,8 @@ xargs -a Packages pacman -S --noconfirm --needed
 
 * latex
   latex + dvips + ps2pdf pdf2ps
+* image
+** resize all image in file
+for x in *.html; do mv "$x" "${x%.html}.php"; doneor file in *.jpg; do convert $file -resize 64x128! resize-$file  && rm $file; done
+
+for x in *.c; do mv "$x" "${x%.c}.cpp"; done

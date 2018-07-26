@@ -1,7 +1,17 @@
+* friendly for guest
+  | ~C-z~ | exit vim mode |
 * Update spacemacs git
   cd ~/.emacs.d/ && git pull
 * Help
   | ~SPC h l~ | view README.md help layers |
+* Helm in buffer
+  | ~C-SPC~ | mark    |
+  | ~C-z~   | command |
+* flycheck
+  | ~SPC-t-s~ | flycheck disable |
+* jump
+  | ~SPC-s-j~ | choose and jump function in file      |
+  | ~g-d~     | jump to line contain variable in file |
 * python
 ** jedi
 ** pip install pylint
