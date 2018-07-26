@@ -1,5 +1,8 @@
 * friendly for guest
   | ~C-z~ | exit vim mode |
+* Documentation
+  | ~SPC h SPC~ | read documentation |
+  |             |                    |
 * Update spacemacs git
   cd ~/.emacs.d/ && git pull
 * Help
@@ -90,7 +93,6 @@
    | ~SPC e n~                | next error     |
    | ~SPC e N~                | previous error |
    | ~SPC e N~                | previous error |
-
    /usr/local/bin/cc_args.py
 
    CXX='cc_args.py g++' cmake ..
@@ -107,4 +109,5 @@
 
    [[pjr/.projectile]]
 
-   
+   [[pjr/.dir-locale]]
+(set-default helm-make-build-dir ".")

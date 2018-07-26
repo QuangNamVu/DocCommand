@@ -75,7 +75,10 @@ ls -1 | sed -e 's/\.png$//'
    find . -mtime -3
    find / -iname "*.jpg"
    find / -iname 101.txt
-   find . -type h -maxdepth 3 |grep xyz //not find directory
+   find . -type f -maxdepth 3 |grep xyz //not find directory normal file
+** sed
+*** replace substring
+    sed -i 's/car4/car9/g' *
 ** date ( time)
    date --set="2 OCT 2006 18:00:00"
    date +%T -s "10:13:13"
