@@ -1,3 +1,19 @@
 * version
 python -c 'import tensorflow as tf; print(tf.__version__)'
 pip list | grep tensorflow
+
+* install with anaconda
+link https://www.tensorflow.org/install/pip
+
+conda create -n venv pip python=3.6 
+
+source activate venv
+
+# get url wheel
+https://www.tensorflow.org/install/pip#package-location
+
+pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.12.0-cp36-cp36m-linux_x86_64.whl
+
+pip install matplotlib
+
+source deactivate

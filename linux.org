@@ -58,7 +58,7 @@
    [21] On some systems, it may also include internal binaries that are not intended to be executed directly by users or shell scripts. [22]
 * Basic
 ** ls show all filename without extension
-ls -1 | sed -e 's/\.png$//'
+   ls -1 | sed -e 's/\.png$//'
 ** remove
    rm -r -- !(*.txt)
 ** copy
@@ -130,10 +130,10 @@ ls -1 | sed -e 's/\.png$//'
 ** pacman auto remove
    pacman -R $(pacman -Qdtq)
 ** migrate to new hardware
-pacman -Qqe | grep -vx "$(pacman -Qqm)" > Packages
-pacman -Qqm > Packages.aur
-# as root
-xargs -a Packages pacman -S --noconfirm --needed
+   pacman -Qqe | grep -vx "$(pacman -Qqm)" > Packages
+   pacman -Qqm > Packages.aur
+   # as root
+   xargs -a Packages pacman -S --noconfirm --needed
 * Mouse
   [[/etc/X11/xorg.conf.d/00-keyboard.conf]]
   synclient TapButton1=1
@@ -142,7 +142,7 @@ xargs -a Packages pacman -S --noconfirm --needed
 
   [[~/.config/X11/xorg.conf.d/00-keyboard.conf]]
 *** save in file
-  synclient |grep TapButt > .config/touchpad.txt
+    synclient |grep TapButt > .config/touchpad.txt
 * keyboard
   setxkbmap jp
 * Sound
@@ -152,8 +152,8 @@ xargs -a Packages pacman -S --noconfirm --needed
    pacmd set-sink-input-mute <index> false
    pacmd set-sink-input-mute 26 true
 ** mute bell
-  xset b off // bell
-  set bell-style none    /etc/inputrc tty
+   xset b off // bell
+   set bell-style none    /etc/inputrc tty
 * Vimdiff
   vimdiff 1 2 # compare 2 file zo -> open fold.  zc -> close fold.
 * X window
@@ -165,6 +165,9 @@ xargs -a Packages pacman -S --noconfirm --needed
    xrandr --output LVDS1 --rotate normal
    xrandr --output VGA1 --mode 1024x768 --same-as LVDS1
    xrandr --output HDMI1 --mode 1024x768 --same-as LVDS1
+
+   xrandr --output HDMI1 --mode 1024x768 --same-as LVDS1
+
    xrandr --output VGA1 --mode 
    xrandr --output VGA1 --mode --off
    xrandr --output HDMI1 --mode --off
@@ -277,9 +280,9 @@ xargs -a Packages pacman -S --noconfirm --needed
 ** list all enable service
    systemctl list-unit-files --state enabled
 ** enable
-  systemctl enable bluetooth.service
+   systemctl enable bluetooth.service
 ** start
-  systemctl start bluetooth.service
+   systemctl start bluetooth.service
 * File manager
   tree -L 3
   ranger --copy-config=all #ranger s gotopwd
@@ -309,6 +312,6 @@ xargs -a Packages pacman -S --noconfirm --needed
   latex + dvips + ps2pdf pdf2ps
 * image
 ** resize all image in file
-for x in *.html; do mv "$x" "${x%.html}.php"; doneor file in *.jpg; do convert $file -resize 64x128! resize-$file  && rm $file; done
+   for x in *.html; do mv "$x" "${x%.html}.php"; doneor file in *.jpg; do convert $file -resize 64x128! resize-$file  && rm $file; done
 
-for x in *.c; do mv "$x" "${x%.c}.cpp"; done
+   for x in *.c; do mv "$x" "${x%.c}.cpp"; done

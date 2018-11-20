@@ -6,7 +6,7 @@ git push -u origin master
 git push --force origin master
 cache: default in github timeout is 15min
 git config --global credential.helper cache
-git config --global credential.helper 'cache --timeout=3600'
+git config --global credential.helper 'cache --timeout=36000'
 git rm --cached file
 git rm -f  --cached bundle/YouCompleteMe
 git add . -A # remove file
@@ -47,7 +47,7 @@ git format_patch HEAD~1
    # echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
 * Ssh-key
   generate new key
-  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  ssh-keygen -t rsa -b 4096 -C "vqnam97@gmail.com"
 * Reset
   # danger zone #
   git reset --hard

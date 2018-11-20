@@ -2,7 +2,6 @@
   | ~C-z~ | exit vim mode |
 * Documentation
   | ~SPC h SPC~ | read documentation |
-  |             |                    |
 * Update spacemacs git
   cd ~/.emacs.d/ && git pull
 * Help
@@ -32,7 +31,6 @@
    | work-sheet execute mode | run cell in text-mode | ~C-c C-c~   |
    | insert cell below       | edit new cell         | ~C-c C-b~   |
    | save checkpoint         |                       | ~, C-s~     |
-   |                         |                       |             |
 * Search 
 ** emacs search regrex
   | ~C-M-s~ | forward a[a-z] |
