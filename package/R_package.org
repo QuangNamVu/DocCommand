@@ -1,0 +1,2 @@
+* party
+install.packages("party", dependence = TRUE)

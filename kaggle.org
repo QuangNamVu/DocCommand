@@ -1,0 +1,9 @@
+* list competitions
+$ kaggle competitions list -s two-sigma-financial     
+ref                                         deadline             category       reward  teamCount  userHasEntered  
+------------------------------------------  -------------------  -----------  --------  ---------  --------------  
+two-sigma-financial-modeling                2017-03-01 23:59:00  Featured     $100,000       2070           False  
+two-sigma-financial-news                    2019-01-08 23:59:00  Featured     $100,000       1723            True  
+two-sigma-connect-rental-listing-inquiries  2017-04-25 23:59:00  Recruitment      Jobs       2488           False  
+GiveMeSomeCredit                            2011-12-15 23:59:59  Featured       $5,000        924           False  
+tourism2                                    2010-11-21 23:00:00  Featured         $500         42           False
