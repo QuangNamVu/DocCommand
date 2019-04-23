@@ -70,6 +70,8 @@
 ** kill
    ps aux | grep  kill -9
    pkill dic pgrep pstree top
+   kill -9 `ps aux | grep gvfsd-trash | grep -v grep | awk '{print $2}'`
+
 ** find
    find . -type d -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
    find . -mtime -3
